@@ -17,22 +17,18 @@ USE_IPV6:=1
 INCLUDEPATHS= \
  -I"$(CURDIR)" \
  -I"$(CURDIR)"/obj \
- -I"$(DEPSDIR)/boost_1_55_0" \
- -I"$(DEPSDIR)/db-6.0.20/build_unix" \
- -I"$(DEPSDIR)/openssl-1.0.1f/include" \
+ -I"$(DEPSDIR)/include" \
  -I"$(DEPSDIR)"
 
 LIBPATHS= \
- -L"$(DEPSDIR)/boost_1_55_0/stage/lib" \
- -L"$(DEPSDIR)/db-6.0.20/build_unix" \
- -L"$(DEPSDIR)/openssl-1.0.1f"
+ -L"$(DEPSDIR)/lib"
 
 LIBS= \
- -l boost_system-mt \
- -l boost_filesystem-mt \
- -l boost_program_options-mt \
- -l boost_thread_win32-mt \
- -l boost_chrono-mt \
+ -l boost_system-mt-s \
+ -l boost_filesystem-mt-s \
+ -l boost_program_options-mt-s \
+ -l boost_thread_win32-mt-s \
+ -l boost_chrono-mt-s \
  -l db_cxx \
  -l ssl \
  -l crypto
