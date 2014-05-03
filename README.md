@@ -1,4 +1,4 @@
-yaycoin integration/staging tree
+Ringo integration/staging tree
 ================================
 
 https://github.com/dkwzjw/ringo
