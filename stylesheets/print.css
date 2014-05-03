@@ -23,9 +23,6 @@ article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
   display: block;
 }
-body {
-  line-height: 1;
-}
 ol, ul {
   list-style: none;
 }
@@ -40,12 +37,6 @@ q:before, q:after {
 table {
   border-collapse: collapse;
   border-spacing: 0;
-}
-body {
-  font-size: 13px;
-  line-height: 1.5; 
-  font-family: 'Helvetica Neue', Helvetica, Arial, serif;
-  color: #000;
 }
 
 a {
@@ -123,59 +114,9 @@ td {
 }
 
 form {
-  background: #f2f2f2;
-  padding: 20px;
+	padding: 20px;
+	background-color: #f2f2f2;
   
-}
-
-
-/* GENERAL ELEMENT TYPE STYLES */
-
-h1 {
-  font-size: 2.8em;
-} 
-
-h2 {
-  font-size: 22px;
-  font-weight: bold;
-  color: #303030;
-  margin-bottom: 8px;
-} 
-
-h3 {
-  color: #d5000d;
-  font-size: 18px;
-  font-weight: bold;
-  margin-bottom: 8px;
-} 
- 
-h4 {
-  font-size: 16px;
-  color: #303030;
-  font-weight: bold;
-} 
-
-h5 {
-  font-size: 1em;
-  color: #303030;
-} 
-
-h6 {
-  font-size: .8em;
-  color: #303030;
-} 
-
-p {
-  font-weight: 300;
-  margin-bottom: 20px;
-}
- 
-a {
-  text-decoration: none;
-}
-
-p a {
-  font-weight: 400;
 }
 
 blockquote {
