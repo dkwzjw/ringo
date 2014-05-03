@@ -1018,10 +1018,10 @@ int64_t GetProofOfStakeReward(int nHeight, unsigned int nBits, int64_t nFees)
 }
 
 unsigned int nTargetTimespan =  0.10 * 24 * 60 * 60; // 2.4 hours
-unsigned int nTargetSpacing = 1 * 10; // 1 minute
+unsigned int nTargetSpacing = 1 * 60; // 1 minute
 unsigned int nInterval = nTargetTimespan / nTargetSpacing;
-unsigned int nTargetTimespanRe = 1 * 10; // 1 minute
-unsigned int nTargetSpacingRe = 1 * 10; // 1 minute
+unsigned int nTargetTimespanRe = 1 * 60; // 1 minute
+unsigned int nTargetSpacingRe = 1 * 60; // 1 minute
 unsigned int nIntervalRe = nTargetTimespanRe / nTargetSpacingRe; // 1 block
 
 //
