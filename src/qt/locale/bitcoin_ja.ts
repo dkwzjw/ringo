@@ -15,12 +15,9 @@
         <location line="+41"/>
         <source>Copyright c 2009-2014 The Bitcoin developers
 Copyright c 2012-2014 The NovaCoin developers
-Copyright c 2012-2014 The BlackCoin developers
+Copyright c 2014 The BlackCoin developers
 Copyright c 2014 The Ringo developers</source>
-        <translation>Copyright c 2009-2014 The Bitcoin developers
-Copyright c 2012-2014 The NovaCoin developers
-Copyright c 2012-2014 The BlackCoin developers
-Copyright c 2014 The Ringo developers</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location line="+15"/>
@@ -622,7 +619,7 @@ MIT/X11 ソフトウェア ライセンスの下で配布されています。�
     <message>
         <location line="+59"/>
         <source>This transaction is over the size limit.  You can still send it for a fee of %1, which goes to the nodes that process your transaction and helps to support the network.  Do you want to pay the fee?</source>
-        <translation>この送金には手数料がかかります。%1を支払うと、送金が出来ます。手数料は採掘者に配布されますのでネットワークの維持にご協力ください。手数料を支払いますか？</translation>
+        <translation>この送金には手数料がかかります。%1を支払うと、送金が出来ます。手数料は採掘者に配布されますので、ネットワークの維持にご協力ください。手数料を支払いますか？</translation>
     </message>
     <message>
         <location line="+5"/>
@@ -632,12 +629,12 @@ MIT/X11 ソフトウェア ライセンスの下で配布されています。�
     <message>
         <location line="+27"/>
         <source>Sent transaction</source>
-        <translation>送金取引</translation>
+        <translation>送金</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>Incoming transaction</source>
-        <translation>着金取引</translation>
+        <translation>入金</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -1324,14 +1321,19 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
         <translation>表示された情報は古いかもしれません。接続が確立されると、あなたのウォレットはRingoネットワークと自動的に同期しますが、このプロセスはまだ完了していません。</translation>
     </message>
     <message>
+        <location line="-124"/>
+        <source>Balance:</source>
+        <translation>ウォレットの残高:</translation>
+    </message>
+    <message>
         <location line="-160"/>
         <source>Stake:</source>
-        <translation>Stake：</translation>
+        <translation>掛け金(Stake)：</translation>
     </message>
     <message>
         <location line="+29"/>
         <source>Unconfirmed:</source>
-        <translation>未検証：</translation>
+        <translation>確認中の残高：</translation>
     </message>
     <message>
         <location line="-107"/>
@@ -1351,7 +1353,7 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
     <message>
         <location line="+71"/>
         <source>Immature:</source>
-        <translation>未完成:</translation>
+        <translation>承認待ちの残高:</translation>
     </message>
     <message>
         <location line="+13"/>
@@ -1786,7 +1788,7 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
     <message>
         <location line="+86"/>
         <source>&lt;b&gt;%1&lt;/b&gt; to %2 (%3)</source>
-        <translation>&lt;b&gt;%1&lt;/b&gt; から %2 (%3)に</translation>
+        <translation>&lt;b&gt;%1&lt;/b&gt; を %2 (%3)に</translation>
     </message>
     <message>
         <location line="+5"/>
@@ -1796,7 +1798,7 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
     <message>
         <location line="+1"/>
         <source>Are you sure you want to send %1?</source>
-        <translation>%1送付、よろしいですか?</translation>
+        <translation>%1送金します。よろしいですか?</translation>
     </message>
     <message>
         <location line="+0"/>
@@ -2305,7 +2307,7 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
     <message>
         <location line="+0"/>
         <source>Address</source>
-        <translation>Helbidea</translation>
+        <translation>アドレス</translation>
     </message>
     <message>
         <location line="+0"/>
@@ -2365,7 +2367,7 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
     <message>
         <location line="+42"/>
         <source>Received with</source>
-        <translation type="unfinished"/>
+        <translation>入金</translation>
     </message>
     <message>
         <location line="+2"/>
@@ -2375,22 +2377,22 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
     <message>
         <location line="+3"/>
         <source>Sent to</source>
-        <translation type="unfinished"/>
+        <translation>送金</translation>
     </message>
     <message>
         <location line="+2"/>
         <source>Payment to yourself</source>
-        <translation type="unfinished"/>
+        <translation>自分自身へ送金</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>PoW Mined</source>
-        <translation type="unfinished"/>
+        <translation>PoW 採掘</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>PoS Mined</source>
-        <translation type="unfinished"/>
+        <translation>PoS 採掘</translation>
     </message>
     <message>
         <location line="+38"/>
@@ -2464,32 +2466,32 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
     <message>
         <location line="+11"/>
         <source>Received with</source>
-        <translation type="unfinished"/>
+        <translation>入金</translation>
     </message>
     <message>
         <location line="+2"/>
         <source>Sent to</source>
-        <translation type="unfinished"/>
+         <translation>送金</translation>
     </message>
     <message>
         <location line="+2"/>
         <source>To yourself</source>
-        <translation type="unfinished"/>
+        <translation>自分自身へ送金</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>PoW Mined</source>
-        <translation type="unfinished"/>
+        <translation>PoW 採掘</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>PoS Mined</source>
-        <translation type="unfinished"/>
+        <translation>PoS 採掘</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>Other</source>
-        <translation type="unfinished"/>
+        <translation>その他</translation>
     </message>
     <message>
         <location line="+7"/>
