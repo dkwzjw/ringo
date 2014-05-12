@@ -15,7 +15,7 @@
         <location line="+41"/>
         <source>Copyright c 2009-2014 The Bitcoin developers
 Copyright c 2012-2014 The NovaCoin developers
-Copyright c 2014 The BlackCoin developers
+Copyright c 2012-2014 The BlackCoin developers
 Copyright c 2014 The Ringo developers</source>
         <translation type="unfinished"/>
     </message>
@@ -559,7 +559,7 @@ MIT/X11 ソフトウェア ライセンスの下で配布されています。�
     <message>
         <location line="+6"/>
         <source>Not staking because wallet is locked</source>
-        <translation>ウォレットがロックされたため、PoSによる採掘ができません</translation>
+        <translation>ウォレットをロックされたため、PoSによる採掘ができません</translation>
     </message>
     <message>
         <location line="+2"/>
@@ -569,12 +569,12 @@ MIT/X11 ソフトウェア ライセンスの下で配布されています。�
     <message>
         <location line="+2"/>
         <source>Not staking because wallet is syncing</source>
-        <translation>ウォレットが同期中のため、PoSによる採掘ができません</translation>
+        <translation>ウォレットが同期最中ため、PoSによる採掘ができません</translation>
     </message>
     <message>
         <location line="+2"/>
         <source>Not staking because you don&apos;t have mature coins</source>
-        <translation>PoSによる採掘ができるまでもうしばらくお待ちください</translation>
+        <translation>PoSによる採掘は停止しています</translation>
     </message>
     <message numerus="yes">
         <location line="-403"/>
@@ -629,12 +629,12 @@ MIT/X11 ソフトウェア ライセンスの下で配布されています。�
     <message>
         <location line="+27"/>
         <source>Sent transaction</source>
-        <translation>送金取引</translation>
+        <translation>送金</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>Incoming transaction</source>
-        <translation>着金取引</translation>
+        <translation>入金</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -749,7 +749,7 @@ Address: %4
     <message>
         <location line="+48"/>
         <source>Amount:</source>
-        <translation>額</translation>
+        <translation>総額</translation>
     </message>
     <message>
         <location line="+32"/>
@@ -799,7 +799,7 @@ Address: %4
     <message>
         <location line="+45"/>
         <source>Amount</source>
-        <translation>額</translation>
+        <translation>総額</translation>
     </message>
     <message>
         <location line="+5"/>
@@ -819,12 +819,12 @@ Address: %4
     <message>
         <location line="+5"/>
         <source>Confirmations</source>
-        <translation>確認済みの数</translation>
+        <translation>検証済みの数</translation>
     </message>
     <message>
         <location line="+3"/>
         <source>Confirmed</source>
-        <translation>確認済</translation>
+        <translation>検証済</translation>
     </message>
     <message>
         <location line="+5"/>
@@ -845,7 +845,7 @@ Address: %4
         <location line="+1"/>
         <location line="+26"/>
         <source>Copy amount</source>
-        <translation>額のコピー</translation>
+        <translation>総額のコピー</translation>
     </message>
     <message>
         <location line="-25"/>
@@ -1347,7 +1347,7 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
     </message>
     <message>
         <location line="+16"/>
-        <source>Your current spendable balance</source>
+        <source>Your current balance</source>
         <translation>あなたの利用可能残高</translation>
     </message>
     <message>
@@ -1378,7 +1378,7 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
     <message>
         <location line="-108"/>
         <source>Total of transactions that have yet to be confirmed, and do not yet count toward the current balance</source>
-        <translation>未確認の取引で利用可能残高に反映されていない数</translation>
+        <translation>未検証の取引で利用可能残高に反映されていない数</translation>
     </message>
     <message>
         <location line="-29"/>
@@ -1407,7 +1407,7 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
     <message>
         <location line="+56"/>
         <source>Amount:</source>
-        <translation>額:</translation>
+        <translation>総額:</translation>
     </message>
     <message>
         <location line="-44"/>
@@ -1650,7 +1650,7 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
     <message>
         <location line="+51"/>
         <source>Amount:</source>
-        <translation>額:</translation>
+        <translation>総額:</translation>
     </message>
     <message>
         <location line="+22"/>
@@ -2105,81 +2105,81 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
     <message>
         <location filename="../transactiondesc.cpp" line="+19"/>
         <source>Open until %1</source>
-        <translation type="unfinished"/>
+        <translation>ユニット%1を開く</translation>
     </message>
     <message numerus="yes">
         <location line="-2"/>
         <source>Open for %n block(s)</source>
-        <translation type="unfinished"/>
+        <translation><numerusform>%nブロックを開いています</numerusform></translation>
     </message>
     <message>
         <location line="+8"/>
         <source>conflicted</source>
-        <translation type="unfinished"/>
+        <translation>相違</translation>
     </message>
     <message>
         <location line="+2"/>
         <source>%1/offline</source>
-        <translation type="unfinished"/>
+        <translation>%1/オフライン</translation>
     </message>
     <message>
         <location line="+2"/>
         <source>%1/unconfirmed</source>
-        <translation type="unfinished"/>
+        <translation>%1/未検証、</translation>
     </message>
     <message>
         <location line="+2"/>
         <source>%1 confirmations</source>
-        <translation type="unfinished"/>
+        <translation>%1承認、</translation>
     </message>
     <message>
         <location line="+18"/>
         <source>Status</source>
-        <translation type="unfinished"/>
+        <translation>ステータス</translation>
     </message>
     <message numerus="yes">
         <location line="+7"/>
         <source>, broadcast through %n node(s)</source>
-        <translation type="unfinished"/>
+        <translation><numerusform>%nノードに送信</numerusform></translation>
     </message>
     <message>
         <location line="+4"/>
         <source>Date</source>
-        <translation type="unfinished"/>
+        <translation>日付</translation>
     </message>
     <message>
         <location line="+7"/>
         <source>Source</source>
-        <translation type="unfinished"/>
+        <translation>ソース</translation>
     </message>
     <message>
         <location line="+0"/>
         <source>Generated</source>
-        <translation type="unfinished"/>
+        <translation>Generated</translation>
     </message>
     <message>
         <location line="+5"/>
         <location line="+17"/>
         <source>From</source>
-        <translation type="unfinished"/>
+        <translation>送信</translation>
     </message>
     <message>
         <location line="+1"/>
         <location line="+22"/>
         <location line="+58"/>
         <source>To</source>
-        <translation type="unfinished"/>
+        <translation>受信</translation>
     </message>
     <message>
         <location line="-77"/>
         <location line="+2"/>
         <source>own address</source>
-        <translation type="unfinished"/>
+        <translation>自分のアドレス</translation>
     </message>
     <message>
         <location line="-2"/>
         <source>label</source>
-        <translation type="unfinished"/>
+        <translation>ラベル</translation>
     </message>
     <message>
         <location line="+37"/>
@@ -2188,17 +2188,17 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
         <location line="+17"/>
         <location line="+30"/>
         <source>Credit</source>
-        <translation type="unfinished"/>
+        <translation>クレジット</translation>
     </message>
     <message numerus="yes">
         <location line="-102"/>
         <source>matures in %n more block(s)</source>
-        <translation type="unfinished"/>
+        <translation><numerusform>%n以上のブロックが満期</numerusform></translation>
     </message>
     <message>
         <location line="+2"/>
         <source>not accepted</source>
-        <translation type="unfinished"/>
+        <translation>承認されなかった</translation>
     </message>
     <message>
         <location line="+44"/>
@@ -2206,32 +2206,32 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
         <location line="+15"/>
         <location line="+30"/>
         <source>Debit</source>
-        <translation type="unfinished"/>
+        <translation>引き落とし額</translation>
     </message>
     <message>
         <location line="-39"/>
         <source>Transaction fee</source>
-        <translation type="unfinished"/>
+        <translation>取引の手数料</translation>
     </message>
     <message>
         <location line="+16"/>
         <source>Net amount</source>
-        <translation type="unfinished"/>
+        <translation>Net amount</translation>
     </message>
     <message>
         <location line="+6"/>
         <source>Message</source>
-        <translation type="unfinished"/>
+        <translation>メッセージ</translation>
     </message>
     <message>
         <location line="+2"/>
         <source>Comment</source>
-        <translation type="unfinished"/>
+        <translation>コメント</translation>
     </message>
     <message>
         <location line="+2"/>
         <source>Transaction ID</source>
-        <translation type="unfinished"/>
+        <translation>取引のID</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -2241,42 +2241,42 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
     <message>
         <location line="+7"/>
         <source>Debug information</source>
-        <translation type="unfinished"/>
+        <translation>デバッグ情報</translation>
     </message>
     <message>
         <location line="+8"/>
         <source>Transaction</source>
-        <translation type="unfinished"/>
+        <translation>取引</translation>
     </message>
     <message>
         <location line="+5"/>
         <source>Inputs</source>
-        <translation type="unfinished"/>
+        <translation>入力</translation>
     </message>
     <message>
         <location line="+23"/>
         <source>Amount</source>
-        <translation type="unfinished"/>
+        <translation>総額</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>true</source>
-        <translation type="unfinished"/>
+        <translation>正しい</translation>
     </message>
     <message>
         <location line="+0"/>
         <source>false</source>
-        <translation type="unfinished"/>
+        <translation>正しくない</translation>
     </message>
     <message>
         <location line="-211"/>
         <source>, has not been successfully broadcast yet</source>
-        <translation type="unfinished"/>
+        <translation>まだブロードキャストが成功していません</translation>
     </message>
     <message>
         <location line="+35"/>
         <source>unknown</source>
-        <translation type="unfinished"/>
+        <translation>未確認</translation>
     </message>
 </context>
 <context>
@@ -2284,12 +2284,12 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
     <message>
         <location filename="../forms/transactiondescdialog.ui" line="+14"/>
         <source>Transaction details</source>
-        <translation type="unfinished"/>
+        <translation>取引の詳細</translation>
     </message>
     <message>
         <location line="+6"/>
         <source>This pane shows a detailed description of the transaction</source>
-        <translation type="unfinished"/>
+        <translation>ここでは処理の詳細を表示しています</translation>
     </message>
 </context>
 <context>
@@ -2312,7 +2312,7 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
     <message>
         <location line="+0"/>
         <source>Amount</source>
-        <translation>額</translation>
+        <translation>総額</translation>
     </message>
     <message>
         <location line="+60"/>
@@ -2322,7 +2322,7 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
     <message>
         <location line="+12"/>
         <source>Confirmed (%1 confirmations)</source>
-        <translation>確認されました (%1 確認済み)</translation>
+        <translation>検証されました (%1 検証済み)</translation>
     </message>
     <message numerus="yes">
         <location line="-15"/>
@@ -2337,7 +2337,7 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
     <message>
         <location line="+3"/>
         <source>Unconfirmed</source>
-        <translation>未確認</translation>
+        <translation>未検証</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -2352,7 +2352,7 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
     <message>
         <location line="+3"/>
         <source>Immature (%1 confirmations, will be available after %2)</source>
-        <translation type="unfinished"/>
+        <translation>承認待ち</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -2422,7 +2422,7 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
     <message>
         <location line="+2"/>
         <source>Amount removed from or added to balance.</source>
-        <translation>残高に追加または削除された額。</translation>
+        <translation>残高に追加または削除された総額。</translation>
     </message>
 </context>
 <context>
@@ -2516,7 +2516,7 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
     <message>
         <location line="+1"/>
         <source>Copy amount</source>
-        <translation>額のコピー</translation>
+        <translation>総額のコピー</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -2546,7 +2546,7 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
     <message>
         <location line="+8"/>
         <source>Confirmed</source>
-        <translation>確認済み</translation>
+        <translation>検証済み</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -2571,7 +2571,7 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
     <message>
         <location line="+1"/>
         <source>Amount</source>
-        <translation>額</translation>
+        <translation>総額</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -3224,7 +3224,7 @@ rpcpassword=%s
     <message>
         <location line="+5"/>
         <source>Invalid amount</source>
-        <translation>無効な額</translation>
+        <translation>無効な総額</translation>
     </message>
     <message>
         <location line="+1"/>
