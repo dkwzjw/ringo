@@ -38,7 +38,7 @@ libzerocoin::Params* ZCParams;
 
 CBigNum bnProofOfWorkLimit(~uint256(0) >> 20); // "standard" scrypt target limit for proof of work, results with 0,000244140625 proof-of-work difficulty
 CBigNum bnProofOfStakeLimit(~uint256(0) >> 20);
-CBigNum bnProofOfWorkLimitTestNet(~uint256(0) >> 12);
+CBigNum bnProofOfWorkLimitTestNet(~uint256(0) >> 5);
 
 unsigned int nStakeMinAge = 6 * 60 * 60; // 6 hours
 unsigned int nStakeMaxAge = -1; // unlimited
@@ -2643,7 +2643,7 @@ bool LoadBlockIndex(bool fAllowNew)
         block.nNonce   = 184803;
         if (fTestNet)
         {
-            block.nNonce   = 84548;
+            block.nNonce   = 123754;
         }
 
         if (true  && (block.GetHash() != hashGenesisBlock)) {
