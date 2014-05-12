@@ -38,7 +38,7 @@ libzerocoin::Params* ZCParams;
 
 CBigNum bnProofOfWorkLimit(~uint256(0) >> 20); // "standard" scrypt target limit for proof of work, results with 0,000244140625 proof-of-work difficulty
 CBigNum bnProofOfStakeLimit(~uint256(0) >> 20);
-CBigNum bnProofOfWorkLimitTestNet(~uint256(0) >> 16);
+CBigNum bnProofOfWorkLimitTestNet(~uint256(0) >> 12);
 
 unsigned int nStakeMinAge = 6 * 60 * 60; // 6 hours
 unsigned int nStakeMaxAge = -1; // unlimited
@@ -1070,8 +1070,8 @@ const CBlockIndex* GetLastBlockIndex(const CBlockIndex* pindex, bool fProofOfSta
     return pindex;
 }
 
-// current difficulty formula, DigiByte - DigiShield v2.0 
 unsigned int GetNextTargetRequired(const CBlockIndex* pindexLast, bool fProofOfStake)
+// current difficulty formula, DigiByte - DigiShield v2.0 
 {
     CBigNum bnTargetLimit = fProofOfStake ? bnProofOfStakeLimit : bnProofOfWorkLimit;
 
@@ -1086,12 +1086,24 @@ unsigned int GetNextTargetRequired(const CBlockIndex* pindexLast, bool fProofOfS
 
     // Genesis block
     if (pindexLast == NULL)
-        return bnProofOfWorkLimit.GetCompact(); // genesis block
+        return bnTargetLimit.GetCompact(); // genesis block
 
     const CBlockIndex* pindexPrev = GetLastBlockIndex(pindexLast, fProofOfStake);
     if (pindexPrev->pprev == NULL)
         return bnTargetLimit.GetCompact(); // first block
+
+    // Ringo: This fixes an issue where a 51% attack can change difficulty at will.
+    // Go back the full period unless it's the first retarget after genesis. Code courtesy of Art Forz
+    blockstogoback = retargetInterval-1;
+    if ((pindexPrev->nHeight+1) != retargetInterval) blockstogoback = retargetInterval;
+
     const CBlockIndex* pindexPrevPrev = GetLastBlockIndex(pindexPrev->pprev, fProofOfStake);
+    // Go back by what we want to be 14 days worth of blocks
+    for (int i = 0; pindexPrevPrev && i < blockstogoback; i++)
+/*
+    pindexPrevPrev = pindexPrevPrev->pprev;
+*/
+    assert(pindexPrevPrev);
     if (pindexPrevPrev->pprev == NULL)
         return bnTargetLimit.GetCompact(); // second block
 
@@ -1103,7 +1115,7 @@ unsigned int GetNextTargetRequired(const CBlockIndex* pindexLast, bool fProofOfS
     }
     
     // Only change once per interval
-    if ((pindexLast->nHeight+1) % retargetInterval != 0){
+    if ((pindexPrev->nHeight+1) % retargetInterval != 0){
     // Ringo: remove
 /*
       // Special difficulty rule for testnet:
@@ -1113,36 +1125,31 @@ unsigned int GetNextTargetRequired(const CBlockIndex* pindexLast, bool fProofOfS
 		if (pblock->nTime > pindexLast->nTime + retargetSpacing*2)
 			return bnTargetLimit.GetCompact();
 	else {
+*/
+             {
 		// Return the last non-special-min-difficulty-rules-block
-		const CBlockIndex* pindex = pindexLast;
+		const CBlockIndex* pindex = pindexPrev;
 		while (pindex->pprev && pindex->nHeight % retargetInterval != 0 && pindex->nBits == bnTargetLimit.GetCompact()) 
 			pindex = pindex->pprev;
 	return pindex->nBits;
+        }
+/*
 	}
-      }  
+
+      } 
 */
-      return pindexLast->nBits;
+      return pindexPrev->nBits;
     }
-    
-    // Ringo: This fixes an issue where a 51% attack can change difficulty at will.
-    // Go back the full period unless it's the first retarget after genesis. Code courtesy of Art Forz
-    blockstogoback = retargetInterval-1;
-    if ((pindexLast->nHeight+1) != retargetInterval) blockstogoback = retargetInterval;
-    
-    // Go back by what we want to be 14 days worth of blocks
-    const CBlockIndex* pindexFirst = pindexLast;
-    for (int i = 0; pindexFirst && i < blockstogoback; i++)
-        pindexFirst = pindexFirst->pprev;
-    assert(pindexFirst);
+
 
     // Limit adjustment step
-    int64_t nActualTimespan = pindexLast->GetBlockTime() - pindexFirst->GetBlockTime();
+    int64_t nActualTimespan = pindexPrev->GetBlockTime() - pindexPrevPrev->GetBlockTime();
     printf("  nActualTimespan = %"PRId64"  before bounds\n", nActualTimespan);
 
 
 
     CBigNum bnNew;
-    bnNew.SetCompact(pindexLast->nBits);
+    bnNew.SetCompact(pindexPrev->nBits);
     
 	// DigiByte: thanks to RealSolid & WDC for this code
 		if(fNewDifficultyProtocol) {
