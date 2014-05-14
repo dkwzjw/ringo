@@ -819,12 +819,12 @@ Address: %4
     <message>
         <location line="+5"/>
         <source>Confirmations</source>
-        <translation>検証済みの数</translation>
+        <translation>承認済みの数</translation>
     </message>
     <message>
         <location line="+3"/>
         <source>Confirmed</source>
-        <translation>検証済</translation>
+        <translation>承認済</translation>
     </message>
     <message>
         <location line="+5"/>
@@ -1378,7 +1378,7 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
     <message>
         <location line="-108"/>
         <source>Total of transactions that have yet to be confirmed, and do not yet count toward the current balance</source>
-        <translation>未検証の取引で利用可能残高に反映されていない数</translation>
+        <translation>未承認の取引で利用可能残高に反映されていない数</translation>
     </message>
     <message>
         <location line="-29"/>
@@ -2125,7 +2125,7 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
     <message>
         <location line="+2"/>
         <source>%1/unconfirmed</source>
-        <translation>%1/未検証、</translation>
+        <translation>%1/未承認、</translation>
     </message>
     <message>
         <location line="+2"/>
@@ -2322,7 +2322,7 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
     <message>
         <location line="+12"/>
         <source>Confirmed (%1 confirmations)</source>
-        <translation>検証されました (%1 検証済み)</translation>
+        <translation>承認されました (承認済み%1)</translation>
     </message>
     <message numerus="yes">
         <location line="-15"/>
@@ -2337,12 +2337,12 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
     <message>
         <location line="+3"/>
         <source>Unconfirmed</source>
-        <translation>未検証</translation>
+        <translation>未承認</translation>
     </message>
     <message>
         <location line="+3"/>
         <source>Confirming (%1 of %2 recommended confirmations)</source>
-        <translation type="unfinished"/>
+        <translation>承認中 (%1/%2 が現在承認済み)</translation>
     </message>
     <message>
         <location line="+6"/>
@@ -2352,7 +2352,7 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
     <message>
         <location line="+3"/>
         <source>Immature (%1 confirmations, will be available after %2)</source>
-        <translation>承認待ち</translation>
+        <translation>未承認 (承認%1、%2になると残高へ入ります)</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -2402,7 +2402,7 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
     <message>
         <location line="+190"/>
         <source>Transaction status. Hover over this field to show number of confirmations.</source>
-        <translation>取引の状況。この欄の上にカーソルを置くと検証の数を表示します。</translation>
+        <translation>取引の状況。この欄の上にカーソルを置くと承認数を表示します。</translation>
     </message>
     <message>
         <location line="+2"/>
@@ -2546,7 +2546,7 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
     <message>
         <location line="+8"/>
         <source>Confirmed</source>
-        <translation>検証済み</translation>
+        <translation>承認済み</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -3079,7 +3079,7 @@ rpcpassword=%s
     <message>
         <location line="+1"/>
         <source>How thorough the block verification is (0-6, default: 1)</source>
-        <translation>ブロック検証の徹底の程度　(0-6 、デファルト：1)</translation>
+        <translation>ブロック承認の徹底の程度　(0-6 、デファルト：1)</translation>
     </message>
     <message>
         <location line="+1"/>
