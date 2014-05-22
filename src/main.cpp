@@ -11,6 +11,7 @@
 #include "init.h"
 #include "ui_interface.h"
 #include "kernel.h"
+#include "bitcoinrpc.h"
 #include "zerocoin/Zerocoin.h"
 #include <boost/algorithm/string/replace.hpp>
 #include <boost/filesystem.hpp>
@@ -964,55 +965,25 @@ uint256 WantedByOrphan(const CBlock* pblockOrphan)
 }
 
 // miner's coin base reward
-int64_t GetProofOfWorkReward(int nHeight, unsigned int nBits)
+int64_t GetProofOfWorkReward()
 {
-    unsigned int basenBits = bnProofOfWorkLimit.GetCompact();
-    int nShift = int((basenBits >> 24) & 0xff) - int((nBits >> 24) & 0xff);
-    double dDiff =
-       (double)(basenBits & 0x0000ffff) / (double)(nBits & 0x00ffffff);
-    while (nShift > 0)
-    {
-        dDiff *= 256.0;
-        --nShift;
-    }
-    while (nShift < 0)
-    {
-        dDiff /= 256.0;
-        ++nShift;
-    }
-
-    int64_t nSubsidy = ((dDiff / 256 * 100) + 10) * COIN;
+    int64_t nSubsidy = (int64_t)round(GetDifficulty() * COIN * 100) + 10 * COIN;
 
     return nSubsidy;
 
 }
 
 // miner's coin stake reward based on coin age spent (coin-days)
-int64_t GetProofOfStakeReward(int nHeight, unsigned int nBits, int64_t nFees)
+int64_t GetProofOfStakeReward(int nHeight, int64_t nFees)
 {
-    unsigned int basenBits = bnProofOfWorkLimit.GetCompact();
-    int nShift = int((basenBits >> 24) & 0xff) - int((nBits >> 24) & 0xff);
-    double dDiff =
-       (double)(basenBits & 0x0000ffff) / (double)(nBits & 0x00ffffff);
-    while (nShift > 0)
-    {
-        dDiff *= 256.0;
-        --nShift;
-    }
-    while (nShift < 0)
-    {
-        dDiff /= 256.0;
-        ++nShift;
-    }
+    int64_t nRewardCoin = 1;
 
-    int64_t nRewardCoinDay = 1;
+	if(nHeight <= 20000)
+		nRewardCoin = 100;
+	else if(nHeight <= 120000)
+		nRewardCoin = 10;
 
-	if(nHeight < 20001)
-		nRewardCoinDay = 100;
-	else if(nHeight < 120001)
-		nRewardCoinDay = 10;
-
-    int64_t nSubsidy = (dDiff / 256 * nRewardCoinDay) * COIN;
+    int64_t nSubsidy = (int64_t)round(GetDifficulty() * COIN * nRewardCoin) ;
 
     return nSubsidy + nFees;
 }
@@ -1670,12 +1641,12 @@ bool CBlock::ConnectBlock(CTxDB& txdb, CBlockIndex* pindex, bool fJustCheck)
 
     if (IsProofOfWork())
     {
-        int64_t GetProofOfWorkReward(int nHeight, unsigned int nBits);
+        int64_t GetProofOfWorkReward();
         // Check coinbase reward
-        if (vtx[0].GetValueOut() > GetProofOfWorkReward(pindex->nHeight, pindex->pprev->nBits))
+        if (vtx[0].GetValueOut() > GetProofOfWorkReward())
             return DoS(50, error("ConnectBlock() : coinbase reward exceeded (actual=%"PRId64" vs calculated=%"PRId64")",
                    vtx[0].GetValueOut(),
-                   GetProofOfWorkReward(pindex->nHeight, pindex->pprev->nBits)));
+                   GetProofOfWorkReward()));
     }
     if (IsProofOfStake())
     {
@@ -1684,9 +1655,9 @@ bool CBlock::ConnectBlock(CTxDB& txdb, CBlockIndex* pindex, bool fJustCheck)
         if (!vtx[1].GetCoinAge(txdb, nCoinAge))
             return error("ConnectBlock() : %s unable to get coin age for coinstake", vtx[1].GetHash().ToString().substr(0,10).c_str());
 
-        int64_t GetProofOfStakeReward(int nHeight, unsigned int nBits, int64_t nFees);
-        if (nStakeReward > GetProofOfStakeReward(pindex->nHeight, pindex->pprev->nBits, nFees))
-            return DoS(100, error("ConnectBlock() : coinstake pays too much(actual=%"PRId64" vs calculated=%"PRId64")", nStakeReward, GetProofOfStakeReward(pindex->nHeight, pindex->pprev->nBits, nFees)));
+        int64_t GetProofOfStakeReward(int nHeight, int64_t nFees);
+        if (nStakeReward > GetProofOfStakeReward(pindex->nHeight, nFees))
+            return DoS(100, error("ConnectBlock() : coinstake pays too much(actual=%"PRId64" vs calculated=%"PRId64")", nStakeReward, GetProofOfStakeReward(pindex->nHeight, nFees)));
     }
 
     // ppcoin: track money supply and mint amount info
