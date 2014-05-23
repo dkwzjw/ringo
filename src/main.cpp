@@ -39,7 +39,7 @@ libzerocoin::Params* ZCParams;
 
 CBigNum bnProofOfWorkLimit(~uint256(0) >> 20); // "standard" scrypt target limit for proof of work, results with 0,000244140625 proof-of-work difficulty
 CBigNum bnProofOfStakeLimit(~uint256(0) >> 20);
-CBigNum bnProofOfWorkLimitTestNet(~uint256(0) >> 5);
+CBigNum bnProofOfWorkLimitTestNet(~uint256(0) >> 6);
 
 unsigned int nStakeMinAge = 6 * 60 * 60; // 6 hours
 unsigned int nStakeMaxAge = -1; // unlimited
@@ -2571,35 +2571,9 @@ bool LoadBlockIndex(bool fAllowNew)
         if (!fAllowNew)
             return false;
 
-        // Genesis block
-
-        // MainNet:
-
-        // CBlock(hash=00000320251246a75e3b45db45fc9c7fbf5133bd199fa3e0d67a1ed7f961b9bd, ver=1, hashPrevBlock=0000000000000000000000000000000000000000000000000000000000000000, hashMerkleRoot=be9cc7530fe966354d5611ba2af4e25a51cefa2f3df2f5c2f8f29b32c37fe4bc, nTime=1398589000, nBits=1e0fffff, nNonce=184803, vtx=1, vchBlockSig=)
-        //   Coinbase(hash=be9cc7530f, nTime=1398589000, ver=1, vin.size=1, vout.size=1, nLockTime=0)
-        //     CTxIn(COutPoint(0000000000, 4294967295), coinbase 00012a4c554e592054696d65732032372f4170722f32303134204e65772053797374656d20416c6c6f77732041727469737473205365656b696e6720496e737472756d656e747320746f20426f72726f772c204e6f7420426567)
-        //     CTxOut(empty)
-        //   vMerkleTree: be9cc7530f 
-        // block.GetHash() == 00000320251246a75e3b45db45fc9c7fbf5133bd199fa3e0d67a1ed7f961b9bd
-        // block.hashMerkleRoot == be9cc7530fe966354d5611ba2af4e25a51cefa2f3df2f5c2f8f29b32c37fe4bc
-        // block.nTime = 1398589000 
-        // block.nNonce = 184803 
-
-        // TestNet:
-
-        // CBlock(hash=00004dc9894eea71c255510f48f8f47753ba8726ee530e5f342a832ffcc4845f, ver=1, hashPrevBlock=0000000000000000000000000000000000000000000000000000000000000000, hashMerkleRoot=be9cc7530fe966354d5611ba2af4e25a51cefa2f3df2f5c2f8f29b32c37fe4bc, nTime=1398589000, nBits=1f00ffff, nNonce=84548, vtx=1, vchBlockSig=)
-        //   Coinbase(hash=be9cc7530f, nTime=1398589000, ver=1, vin.size=1, vout.size=1, nLockTime=0)
-        //     CTxIn(COutPoint(0000000000, 4294967295), coinbase 00012a4c554e592054696d65732032372f4170722f32303134204e65772053797374656d20416c6c6f77732041727469737473205365656b696e6720496e737472756d656e747320746f20426f72726f772c204e6f7420426567)
-        //     CTxOut(empty)
-        //   vMerkleTree: be9cc7530f 
-        // block.GetHash() == 00004dc9894eea71c255510f48f8f47753ba8726ee530e5f342a832ffcc4845f
-        // block.hashMerkleRoot == be9cc7530fe966354d5611ba2af4e25a51cefa2f3df2f5c2f8f29b32c37fe4bc
-        // block.nTime = 1398589000 
-        // block.nNonce = 84548 
-
-        const char* pszTimestamp = "NY Times 27/Apr/2014 New System Allows Artists Seeking Instruments to Borrow, Not Beg";
+        const char* pszTimestamp = "ABC News 23/May/2014 'Bitcoin Pizza Day': Why 2 Pies Are Now Worth $5 Million";
         CTransaction txNew;
-        txNew.nTime = 1398589000;
+        txNew.nTime = 1400792000;
         txNew.vin.resize(1);
         txNew.vout.resize(1);
         txNew.vin[0].scriptSig = CScript() << 0 << CBigNum(42) << vector<unsigned char>((const unsigned char*)pszTimestamp, (const unsigned char*)pszTimestamp + strlen(pszTimestamp));
@@ -2609,14 +2583,15 @@ bool LoadBlockIndex(bool fAllowNew)
         block.hashPrevBlock = 0;
         block.hashMerkleRoot = block.BuildMerkleTree();
         block.nVersion = 1;
-        block.nTime    = 1398589000;
+        block.nTime    = 1400792000;
         block.nBits    = bnProofOfWorkLimit.GetCompact();
-        block.nNonce   = 184803;
+        block.nNonce   = 346290;
         if (fTestNet)
         {
-            block.nNonce   = 123754;
+            block.nNonce   = 123927;
         }
 
+/*
         if (true  && (block.GetHash() != hashGenesisBlock)) {
         // This will figure out a valid hash and Nonce if you're
         // creating a different genesis block:
@@ -2637,8 +2612,9 @@ bool LoadBlockIndex(bool fAllowNew)
         printf("block.hashMerkleRoot == %s\n", block.hashMerkleRoot.ToString().c_str());
         printf("block.nTime = %u \n", block.nTime);
         printf("block.nNonce = %u \n", block.nNonce);
+*/
 
-        assert(block.hashMerkleRoot == uint256("0xbe9cc7530fe966354d5611ba2af4e25a51cefa2f3df2f5c2f8f29b32c37fe4bc"));
+        assert(block.hashMerkleRoot == uint256("0x8e67a359fde8e5b6d03e4538a4461752bfe5bf4fd2885a5620eaea53d9b8929b"));
         block.print();
         assert(block.GetHash() == (!fTestNet ? hashGenesisBlock : hashGenesisBlockTestNet));
         assert(block.CheckBlock());
