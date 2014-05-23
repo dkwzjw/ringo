@@ -1145,6 +1145,7 @@ void MapPort()
 static const char *strDNSSeed[][2] = {
     {"ringoringo.luna.ddns.vc", "ringoringo.luna.ddns.vc"},
     {"ringoringo.sun.ddns.vc", "ringoringo.sun.ddns.vc"},
+    {"rinseed.sighash.info", "rinseed.sighash.info"},
 };
 
 void ThreadDNSAddressSeed(void* parg)
