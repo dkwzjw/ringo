@@ -964,26 +964,42 @@ uint256 WantedByOrphan(const CBlock* pblockOrphan)
     return pblockOrphan->hashPrevBlock;
 }
 
-// miner's coin base reward
-int64_t GetProofOfWorkReward()
+static double getdifficulty_prev(const CBlockIndex* blockindex)
 {
-    int64_t nSubsidy = (int64_t)round(GetDifficulty() * COIN * 100) + 10 * COIN;
+  if (blockindex != NULL) {
+    if (blockindex->pprev != NULL) {
+      const CBlockIndex* bi = GetLastBlockIndex(blockindex->pprev, false);
+      return GetDifficulty(bi);
+    } else {
+      return 1.0;
+    }
+  } else {
+    return GetDifficulty();
+  }
+}
+
+
+// miner's coin base reward
+int64_t GetProofOfWorkReward(const CBlockIndex* blockindex)
+{
+    double diff = getdifficulty_prev(blockindex);
+    int64_t nSubsidy = (int64_t)round(diff * COIN * 100) + 10 * COIN;
 
     return nSubsidy;
-
 }
 
 // miner's coin stake reward based on coin age spent (coin-days)
-int64_t GetProofOfStakeReward(int nHeight, int64_t nFees)
+int64_t GetProofOfStakeReward(const CBlockIndex* blockindex, int64_t nFees)
 {
     int64_t nRewardCoin = 1;
 
-	if(nHeight <= 20000)
+	if(blockindex->nHeight <= 20000)
 		nRewardCoin = 100;
-	else if(nHeight <= 120000)
+	else if(blockindex->nHeight <= 120000)
 		nRewardCoin = 10;
 
-    int64_t nSubsidy = (int64_t)round(GetDifficulty() * COIN * nRewardCoin) ;
+    double diff = getdifficulty_prev(blockindex);
+    int64_t nSubsidy = (int64_t)round(diff * COIN * nRewardCoin) ;
 
     return nSubsidy + nFees;
 }
@@ -1641,12 +1657,12 @@ bool CBlock::ConnectBlock(CTxDB& txdb, CBlockIndex* pindex, bool fJustCheck)
 
     if (IsProofOfWork())
     {
-        int64_t GetProofOfWorkReward();
+	int64_t GetProofOfWorkReward(const CBlockIndex* blockindex = NULL);
         // Check coinbase reward
-        if (vtx[0].GetValueOut() > GetProofOfWorkReward())
+        if (vtx[0].GetValueOut() > GetProofOfWorkReward(pindex))
             return DoS(50, error("ConnectBlock() : coinbase reward exceeded (actual=%"PRId64" vs calculated=%"PRId64")",
                    vtx[0].GetValueOut(),
-                   GetProofOfWorkReward()));
+                   GetProofOfWorkReward(pindex)));
     }
     if (IsProofOfStake())
     {
@@ -1655,9 +1671,9 @@ bool CBlock::ConnectBlock(CTxDB& txdb, CBlockIndex* pindex, bool fJustCheck)
         if (!vtx[1].GetCoinAge(txdb, nCoinAge))
             return error("ConnectBlock() : %s unable to get coin age for coinstake", vtx[1].GetHash().ToString().substr(0,10).c_str());
 
-        int64_t GetProofOfStakeReward(int nHeight, int64_t nFees);
-        if (nStakeReward > GetProofOfStakeReward(pindex->nHeight, nFees))
-            return DoS(100, error("ConnectBlock() : coinstake pays too much(actual=%"PRId64" vs calculated=%"PRId64")", nStakeReward, GetProofOfStakeReward(pindex->nHeight, nFees)));
+	int64_t GetProofOfStakeReward(const CBlockIndex* blockindex, int64_t nFees);
+        if (nStakeReward > GetProofOfStakeReward(pindex, nFees))
+            return DoS(100, error("ConnectBlock() : coinstake pays too much(actual=%"PRId64" vs calculated=%"PRId64")", nStakeReward, GetProofOfStakeReward(pindex, nFees)));
     }
 
     // ppcoin: track money supply and mint amount info
