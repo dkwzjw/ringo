@@ -1773,7 +1773,7 @@ bool CWallet::CreateCoinStake(const CKeyStore& keystore, unsigned int nBits, int
 */
 
 
-        nCredit += GetProofOfStakeReward(pIndex0, nFees);
+        nCredit += GetProofOfStakeRewardCurrent(pIndex0->nHeight, nFees);
     }
 
     // Set output amount
