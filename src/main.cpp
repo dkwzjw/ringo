@@ -1004,6 +1004,20 @@ int64_t GetProofOfStakeReward(const CBlockIndex* blockindex, int64_t nFees)
     return nSubsidy + nFees;
 }
 
+int64_t GetProofOfStakeRewardCurrent(int nHeight, int64_t nFees)
+{
+    int64_t nRewardCoin = 1;
+
+	if(nHeight <= 20000)
+		nRewardCoin = 100;
+	else if(nHeight <= 120000)
+		nRewardCoin = 10;
+
+    int64_t nSubsidy = (int64_t)round(GetDifficulty() * COIN * nRewardCoin) ;
+
+    return nSubsidy + nFees;
+}
+
 unsigned int nTargetTimespan =  0.10 * 24 * 60 * 60; // 2.4 hours
 unsigned int nTargetSpacing = 1 * 60; // 1 minute
 unsigned int nInterval = nTargetTimespan / nTargetSpacing;
@@ -1674,6 +1688,7 @@ bool CBlock::ConnectBlock(CTxDB& txdb, CBlockIndex* pindex, bool fJustCheck)
 	int64_t GetProofOfStakeReward(const CBlockIndex* blockindex, int64_t nFees);
         if (nStakeReward > GetProofOfStakeReward(pindex, nFees))
             return DoS(100, error("ConnectBlock() : coinstake pays too much(actual=%"PRId64" vs calculated=%"PRId64")", nStakeReward, GetProofOfStakeReward(pindex, nFees)));
+
     }
 
     // ppcoin: track money supply and mint amount info
