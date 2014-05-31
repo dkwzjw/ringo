@@ -579,7 +579,7 @@ MIT/X11 ソフトウェア ライセンスの下で配布されています。�
     <message numerus="yes">
         <location line="-403"/>
         <source>%n second(s) ago</source>
-        <translation><numerusform>%n 秒前</numerusform></translation>
+        <translation><numerusform>%n 秒</numerusform></translation>
     </message>
     <message>
         <location line="+18"/>
