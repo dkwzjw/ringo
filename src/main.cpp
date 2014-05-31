@@ -1004,13 +1004,13 @@ int64_t GetProofOfStakeReward(const CBlockIndex* blockindex, int64_t nFees)
     return nSubsidy + nFees;
 }
 
-int64_t GetProofOfStakeRewardCurrent(int nHeight, int64_t nFees)
+int64_t GetProofOfStakeRewardCurrent(int64_t nFees)
 {
     int64_t nRewardCoin = 1;
 
-	if(nHeight <= 20000)
+	if(nBestHeight+1 <= 20000)
 		nRewardCoin = 100;
-	else if(nHeight <= 120000)
+	else if(nBestHeight+1 <= 120000)
 		nRewardCoin = 10;
 
     int64_t nSubsidy = (int64_t)round(GetDifficulty() * COIN * nRewardCoin) ;
