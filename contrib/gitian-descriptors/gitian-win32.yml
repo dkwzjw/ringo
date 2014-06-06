@@ -18,7 +18,7 @@ remotes:
 files:
 - "qt-win32-4.8.3-gitian-r5.zip"
 - "boost-win32-1.55.0-gitian-r6.zip"
-- "bitcoin-deps-win32-gitian-r10.zip"
+- "bitcoin-deps-win32-gitian-r11.zip"
 script: |
   #
   STAGING=$HOME/staging
@@ -28,7 +28,7 @@ script: |
   cd $STAGING
   unzip ../build/qt-win32-4.8.3-gitian-r5.zip
   unzip ../build/boost-win32-1.55.0-gitian-r6.zip
-  unzip ../build/bitcoin-deps-win32-gitian-r10.zip
+  unzip ../build/bitcoin-deps-win32-gitian-r11.zip
   cd $HOME/build/
   #
   cd ringo
