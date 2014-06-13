@@ -2348,7 +2348,10 @@ bool ProcessBlock(CNode* pfrom, CBlock* pblock)
         {
             if (pfrom)
                 pfrom->Misbehaving(100);
-            return error("ProcessBlock() : block with too little %s", pblock->IsProofOfStake()? "proof-of-stake" : "proof-of-work");
+            // return error("ProcessBlock() : block with too little %s", pblock->IsProofOfStake()? "proof-of-stake" : "proof-of-work");
+            return error("ProcessBlock() : block with too little %s bnNewBlock %s bnRequired %s",
+                         pblock->IsProofOfStake()? "proof-of-stake" : "proof-of-work",
+                         bnNewBlock.ToString().c_str(), bnRequired.ToString().c_str());
         }
     }
 
