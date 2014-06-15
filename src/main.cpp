@@ -2330,8 +2330,8 @@ bool ProcessBlock(CNode* pfrom, CBlock* pblock)
             mapProofOfStake.insert(make_pair(hash, hashProofOfStake));
     }
 
-    CBlockIndex* pcheckpoint = Checkpoints::GetLastSyncCheckpoint();
 /*
+    CBlockIndex* pcheckpoint = Checkpoints::GetLastSyncCheckpoint();
     if (pcheckpoint && pblock->hashPrevBlock != hashBestChain && !Checkpoints::WantedByPendingSyncCheckpoint(hash))
     {
         // Extra checks to prevent "fill up memory by spamming with bogus blocks"
