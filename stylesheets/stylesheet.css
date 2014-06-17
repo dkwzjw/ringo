@@ -307,7 +307,7 @@ h5:before {
 	padding-bottom: 5px;
 } 
 h6:before {
-  content: "//////";
+  content: "//";
   color: #9ddcff;
   padding-right: 0.3em;
   margin-left: -3.7em;
