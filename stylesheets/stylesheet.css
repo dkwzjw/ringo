@@ -308,7 +308,7 @@ h5:before {
 } 
 h6:before {
   content: "//";
-  color: #9ddcff;
+  color: #FF0000;
   padding-right: 0.3em;
 }
 .concept {
