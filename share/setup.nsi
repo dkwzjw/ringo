@@ -5,7 +5,7 @@ SetCompressor /SOLID lzma
 
 # General Symbol Definitions
 !define REGKEY "SOFTWARE\$(^Name)"
-!define VERSION 1.0.4.1
+!define VERSION 1.0.4.2
 !define COMPANY "Ringo project"
 !define URL https://github.com/dkwzjw/Ringo/
 
@@ -45,13 +45,13 @@ Var StartMenuGroup
 !insertmacro MUI_LANGUAGE English
 
 # Installer attributes
-OutFile ringo-1.0.4.1-win32-setup.exe
+OutFile ringo-1.0.4.2-win32-setup.exe
 InstallDir $PROGRAMFILES\Ringo
 CRCCheck on
 XPStyle on
 BrandingText " "
 ShowInstDetails show
-VIProductVersion 1.0.4.1
+VIProductVersion 1.0.4.2
 VIAddVersionKey ProductName Ringo
 VIAddVersionKey ProductVersion "${VERSION}"
 VIAddVersionKey CompanyName "${COMPANY}"
