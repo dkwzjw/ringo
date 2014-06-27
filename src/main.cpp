@@ -1072,7 +1072,6 @@ const CBlockIndex* GetLastBlockIndex(const CBlockIndex* pindex, bool fProofOfSta
 }
 
 unsigned int GetNextTargetRequired(const CBlockIndex* pindexLast, bool fProofOfStake)
-// current difficulty formula, DigiByte - DigiShield v2.0 
 {
     CBigNum bnTargetLimit = fProofOfStake ? bnProofOfStakeLimit : bnProofOfWorkLimit;
 
@@ -1099,12 +1098,12 @@ unsigned int GetNextTargetRequired(const CBlockIndex* pindexLast, bool fProofOfS
     if ((pindexPrev->nHeight+1) != retargetInterval) blockstogoback = retargetInterval;
 
     const CBlockIndex* pindexPrevPrev = GetLastBlockIndex(pindexPrev->pprev, fProofOfStake);
+/*
     // Go back by what we want to be 14 days worth of blocks
     for (int i = 0; pindexPrevPrev && i < blockstogoback; i++)
-/*
     pindexPrevPrev = pindexPrevPrev->pprev;
-*/
     assert(pindexPrevPrev);
+*/
     if (pindexPrevPrev->pprev == NULL)
         return bnTargetLimit.GetCompact(); // second block
 
@@ -1145,6 +1144,7 @@ unsigned int GetNextTargetRequired(const CBlockIndex* pindexLast, bool fProofOfS
 
     // Limit adjustment step
     int64_t nActualTimespan = pindexPrev->GetBlockTime() - pindexPrevPrev->GetBlockTime();
+    if (fDebug)
     printf("  nActualTimespan = %"PRId64"  before bounds\n", nActualTimespan);
 
 
@@ -2330,6 +2330,7 @@ bool ProcessBlock(CNode* pfrom, CBlock* pblock)
             mapProofOfStake.insert(make_pair(hash, hashProofOfStake));
     }
 
+/*
     CBlockIndex* pcheckpoint = Checkpoints::GetLastSyncCheckpoint();
     if (pcheckpoint && pblock->hashPrevBlock != hashBestChain && !Checkpoints::WantedByPendingSyncCheckpoint(hash))
     {
@@ -2348,10 +2349,13 @@ bool ProcessBlock(CNode* pfrom, CBlock* pblock)
         {
             if (pfrom)
                 pfrom->Misbehaving(100);
-            return error("ProcessBlock() : block with too little %s", pblock->IsProofOfStake()? "proof-of-stake" : "proof-of-work");
+            // return error("ProcessBlock() : block with too little %s", pblock->IsProofOfStake()? "proof-of-stake" : "proof-of-work");
+            return error("ProcessBlock() : block with too little %s bnNewBlock %s bnRequired %s",
+                         pblock->IsProofOfStake()? "proof-of-stake" : "proof-of-work",
+                         bnNewBlock.ToString().c_str(), bnRequired.ToString().c_str());
         }
     }
-
+*/
     // ppcoin: ask for pending sync-checkpoint if any
     if (!IsInitialBlockDownload())
         Checkpoints::AskForPendingSyncCheckpoint(pfrom);
