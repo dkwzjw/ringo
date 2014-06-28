@@ -137,9 +137,10 @@ aside#sidebar {
 	float: right;
 	font-size: 12px;
 	line-height: 1.3;
-	background-color: #EEE;
+	background-color: #FFE;
 	background-repeat: repeat-y;
 	height: auto;
+	border: 1px solid #FFCCCC;
 }
 
 aside#sidebar p.repo-owner,
@@ -150,6 +151,18 @@ aside#sidebar p.repo-owner a {
 #downloads {
   margin-bottom: 40px;
 }
+#kousin {
+	display: block;
+	padding: 10px;
+	overflow: scroll;
+	height: 100px;
+	width: 800px;
+	font-size: 98%;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	border: 1px solid #999999;
+}
+
 
 a.button {
   width: 134px;
