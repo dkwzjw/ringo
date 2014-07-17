@@ -52,6 +52,10 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
+table .display_none {
+	display:table-cell;
+}
+
 
 a {
   color: #FF3366;
