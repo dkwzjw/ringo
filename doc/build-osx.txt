@@ -27,7 +27,7 @@ but you can get the current version from http://developer.apple.com
 
 1.  Clone the github tree to get the source code:
 
-git clone git@github.com:rat4/ringo.git ringo
+git clone git@github.com:dkwzjw/ringo.git ringo
 
 2.  Download and install MacPorts from http://www.macports.org/
 
