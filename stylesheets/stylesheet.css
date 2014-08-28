@@ -131,7 +131,7 @@ header h2 {
 #main-content #rogo {
 	float: right;
 	width: 300px;
-	margin-right: 140px;
+	margin-right: 300px;
 }
 
 
@@ -166,6 +166,19 @@ aside#sidebar p.repo-owner a {
 	margin-bottom: 20px;
 	border: 1px solid #999999;
 }
+.menu_top {
+	float: left;
+	font-size: 130%;
+	margin-right: 50px;
+	padding: 5px;
+	border: 1px solid #FF0000;
+	font-weight: bolder;
+}
+.clear_float {
+	clear: both;
+}
+
+
 
 
 a.button {
