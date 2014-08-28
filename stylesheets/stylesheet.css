@@ -171,8 +171,13 @@ aside#sidebar p.repo-owner a {
 	font-size: 120%;
 	margin-right: 20px;
 	padding: 5px;
-	border: 1px solid #FF0000;
 	font-weight: bolder;
+	border-right-width: 2px;
+	border-bottom-width: 4px;
+	border-right-style: solid;
+	border-bottom-style: inset;
+	border-right-color: #FF0000;
+	border-bottom-color: #FF0000;
 }
 .clear_float {
 	clear: both;
@@ -318,21 +323,23 @@ form {
 } 
 
 #main-content h5 {
-  font-family: 'Architects Daughter', 'Helvetica Neue', Helvetica, Arial, serif; 
-  font-size: 14px;
-  color: #474747;
+	font-family: 'Architects Daughter', 'Helvetica Neue', Helvetica, Arial, serif;
+	font-size: 130%;
+	color: #FF6600;
+	font-weight: bolder;
+	margin-bottom: 6px;
 } 
 h5:before {
-  content: "/////";
-  color: #9ddcff;
+  content: "/";
+  color: #FF66FF;
   padding-right: 0.3em;
-  margin-left: -3.2em;
+  margin-left: 0em;
 }
 
 #main-content h6 {
 	font-family: 'Architects Daughter', 'Helvetica Neue', Helvetica, Arial, serif;
 	font-size: 130%;
-	color: #474747;
+	color: #FF6699;
 	padding-top: 5px;
 	padding-bottom: 5px;
 } 
