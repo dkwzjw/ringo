@@ -40,6 +40,11 @@
         <file alias="key">res/icons/key.png</file>
         <file alias="filesave">res/icons/filesave.png</file>
         <file alias="qrcode">res/icons/qrcode.png</file>
+        <file alias="block">res/icons/block.png</file>
+        <file alias="statistics">res/icons/statistics.png</file>
+        <file alias="chat">res/icons/chat.png</file>
+        <file alias="ringo-80">res/icons/ringo-80.png</file>
+        <file alias="Ringo256">res/icons/ringo-256.png</file>
         <file alias="debugwindow">res/icons/debugwindow.png</file>
         <file alias="staking_off">res/icons/staking_off.png</file>
         <file alias="staking_on">res/icons/staking_on.png</file>
