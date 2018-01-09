@@ -1,232 +1,290 @@
-﻿<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset='utf-8'>
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen" />
-    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen" />
-    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print" />
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
 
-    <!--[if lt IE 9]>
-    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta name="description" content="">
+<meta name="keywords" content="">
+<meta name="author" content="">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-    <title>Ringo</title>
-    <style type="text/css">
-<!--
-.style1 {
-	color: #FF0000;
-	font-weight: bold;
-}
--->
-    </style>
+<title>Ringo</title>
+
+<link rel="stylesheet" href="./src/bootstrap.css">
+<link rel="stylesheet" href="./src/font-awesome.css">
+
+<!-- Main css -->
+<link rel="stylesheet" href="./src/style.css">
+<link href="./src/css.css" rel="stylesheet">
+
 </head>
+<body>
 
-  <body>
-    <header>
-      <div class="inner_top">
-        <h1>Ringo </h1>
+<!-- PRE LOADER -->
 
-        <a href="https://github.com/dkwzjw/" target="_blank" class="button"><small>View project on</small>GitHub</a>		</div>
-    </header>
+<div class="preloader" style="display: none;">
+     <div class="sk-spinner sk-spinner-wordpress">
+          <span class="sk-inner-circle"></span>
+     </div>
+</div>
 
-    <div id="content-wrapper">
-      <div class="inner_main clearfix">
-	  		  <ul>
-          <li class="menu_top"><a href="index.html">トップページ</a></li>
-          <li class="menu_top"><a href="start.html">Ringoをはじめよう！</a></li>
-          <li class="menu_top"><a href="link.html">Ringoリンク集</a></li>
-          <li class="menu_top"><a href="trouble.html">トラブルの対処方法</a></li>
-          <li class="menu_top"><a href="sync.html">bootstrapをつかった同期方法</a></li>
-		  <div class="clear_float"></div>
-		  </ul>
-        <section id="main-content">
+<!-- Navigation section  -->
 
-		  <div id="rogo">
-		    <h2 align="center">- Ringo <font color="red">♥</font>- </h2>
-		    <p align="center"><img src="images/ringo-128.png" alt="ringo"></p>
-	      </div>
-		  <p class="concept">Ringoは2014/5/25に誕生した<br>
-		    暗号通貨です<br>
-		    何枚か持ってると時々増えたりします<br>
-		    <br>
-		    掘っても持っていても楽しい！<br>
-		    Ringoはそんなコインです</p>
-		  <h3>Download	      </h3>
-		  <ul><li><table>
-	        <tr>
-	          <td width="50%"><strong>最新版 v1.1.1.1 beta
-	            </strong>(<strong>New GUI</strong>)<a href="https://github.com/dkwzjw/new-ringo" target="_blank"></a></td>
-	          <td width="50%" rowspan="2" class="display_none"> ベータ版につきQTのみ</td>
-            </tr>
-	        <tr>
-	          <td><a href="https://mega.co.nz/#!L1g2HLQK!8tLkSDJrznaiJ0Va201aI6gPdbPxkS0U_FIecmFl5t4"><img src="images/win_download.png" alt="download" border="0" onMouseOver="this.src='images/win_download_hover.png'" onMouseOut="this.src='images/win_download.png'" /></a><a href="https://mega.co.nz/#!TsQEGYLR!O68ixklH3WcMgicZwsV1vz4iftnszSMW_FArEZLh7wM">
-              <img src="images/linux_download.png" alt="download" border="0" onMouseOver="this.src='images/linux_download_hover.png'" onMouseOut="this.src='images/linux_download.png'" /></a><a href="https://github.com/dkwzjw/new-ringo" target="_blank"></a></td>
-            </tr>
-	        </table>
-		  </li>
-		  <li><img src="images/v1.1.jpg" alt="v1.1" width="640" height="358"></li>
-			<li></li>
-			<li>
-              <table>
-                <tr>
-                  <td width="50%"><strong>安定版 v1.0.4.2</strong>                  (<strong>Classic GUI</strong>)</td>
-                  <td width="50%" rowspan="2">クラシックGUIの安定版です<br>
-                    QT,インストーラー(winのみ),coind入り</td>
-                </tr>
-                <tr>
-                  <td><a href="https://mega.co.nz/#!u0R32Sqa!ev7xQ1EQTmW-uVKCheCeWqsrx_yB-ZzgSIZP0-GUPxY"><img src="images/win_download.png" alt="download" border="0" onMouseOver="this.src='images/win_download_hover.png'" onMouseOut="this.src='images/win_download.png'" /></a><a href="https://mega.co.nz/#!ztIRVLxL!X9sHzH28UKB11qpxha9P8wsfPr4JaTm-n6fJY1gU5ok"><img src="images/linux_download.png" alt="download" border="0" onMouseOver="this.src='images/linux_download_hover.png'" onMouseOut="this.src='images/linux_download.png'" /></a><a href="https://github.com/dkwzjw/ringo" target="_blank"></a></td>
-                </tr>
-              </table>
-            </li>
-            <img src="images/v1.0.4.jpg" alt="v1.0.4" width="640" height="430">
-            <div id="kousin">
-			<li>v1.1.1.1 [2014/7/20] IRCでニックネームに-と_が、ホストがIPv6の時、表示されない問題を修正</li>
-			<li>v1.1.1 [2014/7/17] IRCの追加</li>
-			<li>v1.1.0 [2014/6/28] ウォレットのデザイン変更</li>
-              <li>v1.0.4.2 [2014/6/28] sync-checkpointのキー変更、pnSeed、チェックポイント追加、その他の修正 </li>
-              <li>v1.0.4.1 [2014/6/6]　OpenSSLのバージョンを1.0.1hに</li>
-              <li> v1.0.4 [2014/6/1]　PoS報酬のブロック数取得の修正(20001ブロック問題)、checkpointの追加</li>
-            <li>v1.0.3.1 [2014/5/29]　前回の修正で不十分だったPoS報酬のDiff参照の一部問題の修正</li>
-            <li>v1.0.3 [2014/5/28]　PoS報酬のDiff参照の一部問題の修正、checkpointの追加</li>
-            <li>v1.0.2 [2014/5/28]　Syncの不具合修正、checkpointの追加</li>
-            <li> v1.0.1 [2014/5/26]　checkpointの追加</li>
-            <li> v1.0.0 [2014/5/25]　公開</li>
-            </div>
-            <li><span class="style1"><strong>＊1.0.3.1までの方は更新をおねがいします</strong></span></li>
-			<li>更新前には念のためwallet.datのバックアップをお願いいたします</li>
-	      </ul>
-		  <h3>Ringoの入手方法</h3>
-          <p>RingoはPoWによるマイニングは終了しました。<br>
-          現在の入手方法は</p>
-          <h5>1) PoS採掘により入手する</h5>
-          <p>Ringoはウォレットに残高があるとPoS採掘が始まり、成功するとRINが入手できます。<br>
-          条件は<br>
-            <br>
-          1 .1RIN以上保有していること<br>
-          2. ウォレットに入ってから6時間以上経過<br>
-          3. ウォレットに入ってから360ブロック以上経過<br>
-          4. weightが1以上<br>
-            <br>
-          PoS採掘が始まると右下の矢印のアイコンが緑色になります。<br>
-          残高が多いほど、待っている期間が長いほどweightが増え、PoS採掘に成功しやすくなります。</p>
-          <h5>2) 誰かから貰う</h5>
-          <p>          2ch.netの仮想通貨板のRingoスレでアドレスを貼ると誰かからもらえるかもしれません。</p>
-          <h5>          3) 無料で配布をしているサイトから入手する</h5>
-          <p><a href="http://www.sighash.info/" target="_blank">sighash.info</a>さん、<a href="http://giveme.chikumagumi.com/" target="_blank">コインプレゼント(仮称)</a>さん、<a href="https://multi.xau.jp/faucet/">LA Faucet</a>さんがRINのfaucetに対応していただきました！<br>
-            また、twitter上で<a href="https://twitter.com/throwrin" target="_blank">@throwrin</a>さんが、IRC上でkojikiBOTさんがRINを配布されています。<br>
-            faucetは寄付によって維持されてるので、<br>
-          余裕のある方からの寄付があれば多くの人がRINを入手できます。<br>
-          ご協力をお願いいたします。          </p>
-          <h5>4) 他の通貨とトレードする</h5>
-          <p>Ringoは他の通貨とトレードして入手できます。<br>
-            <a href="https://www.allcoin.com/trade/rin_btc" target="_blank">allcoin.com</a><br>
-              <a href="https://monatr.jp/?lang=en" target="_blank">monatr.jp</a><br>
-              <a href="https://trade.monaco-ex.org/" target="_blank">trade.monaco-ex.org</a><br>
-          が現在Ringoに対応している取引所になります。</p>
-          <h5>5) マルチ・プールで採掘する</h5>
-          <p>Ringoのマルチプールが出来ました！<br>
-            マルチ・プールは他の通貨を採掘し、RINへトレードし配布する仕組みです。 <br>
-            基本的にはプールで掘るものと同じ感覚でRINを入手できます。<br>
-            LA Multi Pool (beta) <a href="http://multi.xau.jp/scrypt/index.php?page=dashboard" target="_blank">Scrypt</a> /          <a href="http://multi.xau.jp/x11/index.php?page=dashboard" target="_blank">X11</a></p>
-		  <h3>Specifications</h3>
-		  <p>Name : Ringo<br>
-	      Symbol : RIN<br>
-		   Algorithm : Scrypt / Proof of Work + Proof of Stake(Difficulty Reward)<br>
-          Max Coins: 80,000,000,000<br>
-	      Premine : 0<br>
-	      Block time : 1 minute<br>
-	      Difficulty : DigiShield v2.0<br>
-	      Confirmations on Transactions: 10 <br>
-	      Confirmations on Mined Blocks: 360<br>
-		    Port : 9393<br>
-		    RPCPort : 9292 </p>
-		  <h4>[Proof of Work]</h4>
-		  <ul>
-	            <li> Block Reward : 10 + 直前のDifficulty100倍ボーナス</li>
-	          <li>Total Blocks : 10000までで採掘終了<br>
-	            <br>
-	          10000ブロック目のPoWのDiffは38.54486305でした！</li>
-		</ul>
-	        <h4>[Proof of Stake (Difficulty Reward)]</h4>
-		<ul>
-	                      
-	            <li> Block Reward :</li>
-                <li>                  1 ～10000 Blocks 直前のPoW Diff × 100</li>
-              <li>    10001～20000 Blocks 10000Block目のPoW Diff × 100</li>
-	          <li>    20001 ～120000 Blocks 10000Block目のPoW Diff × 10</li>
-	          <li> 120001 ～それ以降 10000Block目のPoW Diff</li>
-	          <li>StakeMinAgeは6時間に設定<br>
-	            <br>
-	              <strong>PoS報酬の更新</strong><br>
-              </li>
-              <li>10000ブロック目のPoWのDiff 38.54486305によりPoSの報酬が決まりました</li>
-          <li>10001-20,000 blocks / 3854.48630467 RIN</li>
-	          <li>	            20001-120000 / 385.44863047 RIN</li>
-	          <li>	            120001 - / 38.54486305 RIN
-                <ul>
-            <li><br>
-            </li>
-                </ul>
-                <h3>Ringoって？</h3>
-                <p>Q. 名前について<br>
-            A.  このコインでリンゴ(実物)とトレード出来る日が来ることを願って制作しました<br>
-            シャキっとしたリンゴが大好きで年中食べてます</p>
-                <p>Q. PoWの仕様について<br>
-            A. パワーのある採掘者がたくさん報酬を得られる仕様なので、ある意味公平だと思います<br>
-            Diffボーナスは<a href="http://dkwzjw.github.io/yaycoin/">yaycoin</a>で上手く動かせることが出来たので大丈夫なハズ<br>
-            追記:PoWは終了しました</p>
-                <p>Q. Proof of Stake (Difficulty Reward)について<br>
-            A. PoS採掘でも十分な報酬を得られるように設定しました<br>
-            10000Block以降はBlock10000時のPoWのDiffが基準となります<br>
-            少額でも持っていれば大きな報酬を得られる可能性があるので、とてもお得な仕様です</p>
-                <p>Q.PoWの採掘期間を限定した理由について<br>
-            A. PoSコインの配布方法はプレマインやIPOがありますが、<br>
-            その中では短期間でのPoW配布がフェアだとの判断です<br>
-            長期間でなく短期間のほうがお得感があって採掘が楽しいですね</p>
-                <p>Q. Diffで報酬が変更するコインの価値について<br>
-            A. 予想できません<br>
-            リンゴ(実物)とのトレードも活発になってくれると嬉しいです</p>
-                <p>Q. なぜScrypt？<br>
-            A.   RingoはASICウェルカムなコインです<br>
-            ASICはとてもエコだそうですよ</p>
-                <h3>Images</h3>
-                <p><br>
-            <img src="images/Design.png" alt="Design" width="409" height="300"><br>
-              <a href="images/Design.ai" target="_blank">Download</a><br>
-            制作して頂いたクリエーターさんのアドレス<br>
-          ringo:RRingo2JjYAY7UsAj5ipw84Zrrt8bTBaHo<br>
-          <br>
-          こんな感じで利用させてもらいました！<br>
-          <img src="images/ringo_256_3.png" alt="rogo" width="256" height="256"></p>
-	          </li>
-	          <li><a href="http://smartmining.jp/" target="_blank">スマートマイニング</a>様にもロゴを作っていただきました！</li>
-	          <li><img src="images/ringocoin_300×300.png" alt="ringo300" width="300" height="300"><br>
-	            http://hope.2ch.net/test/read.cgi/cryptocoin/1407123867<br>
-                の850さんの作品です！<br>
-                ringo:RHPKTbf7eeUmKUNS5xbhwRBHHPMRJzkHgQ<br>
-	          </li>
-	          <li><img src="images/accepted.png" alt="accepted" width="524" height="227">
-	            <h3>Donate</h3>
-	            <p>コイン制作者のアドレス<br>
-  ringo:RMpGSC9J3dxmy8SPs1aWHkEDTLVbEqHdny</p>
-	            <h3>Contact</h3>
-	            <p><a href="http://bitcoinlove.lv9.co/chat.php" target="_blank">chat</a><br>
-	              <a href="https://twitter.com/Ringo_yaycoin" target="_blank">Twitter</a><br>
-                beembanbanあっとまーくyahoo.co.jp</p>
-	            <p><br>
-                リンゴのイラストは、<a href="http://kage-design.com/wp/?p=1334" target="_blank">こちら</a>のサイト様の素材をベースに作成しました</p>
-	            <p><strong>本サイト及びプログラムを利用することで発生したいかなる損失・損害に対しその責任を負いません </strong></p>
-          </li>
-		</ul>
-	    </li>
-          </ul>
-        </section>
-      </div>
-    </div>
+<div class="navbar navbar-default navbar-static-top" role="navigation">
+     <div class="container">
 
-  
-  </body>
-</html>
+          <div class="navbar-header">
+               <button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon icon-bar"></span>
+                    <span class="icon icon-bar"></span>
+               </button>
+               <a href="./index.html" class="navbar-brand"><img src="./image/ringo_256_3.png" width="70px" /></a>
+          </div>
+          <div class="collapse navbar-collapse">
+               <ul class="nav navbar-nav navbar-right">
+                    <li class="active"><a href="https://github.com/dkwzjw/ringo">GitHub</a></li>
+                    <li><a href="https://github.com/dkwzjw/ringo/releases">Download</a></li>
+               </ul>
+          </div>
+
+  </div>
+</div>
+
+<!-- Home Section -->
+
+<section id="home">
+     <div class="container">
+          <div class="row">
+
+               <div class="col-md-12 col-sm-12">
+                   <h2>Ringoは2014年5月25日に誕生した暗号通貨です</h2>
+                    <hr>
+                    <img src="./image/ringo-128.png"><br>
+                        <br>
+                        <a href="https://github.com/dkwzjw/ringo/releases" _blank><button>Download Wallet</button><br>
+                        <br>
+                        <img width="300px" src="./image/v1.1.jpg"/>
+                        </a>
+               </div>
+
+          </div>
+     </div>
+</section>
+
+<!-- Portfolio Section -->
+
+<section id="portfolio">
+     <div class="container">
+          <div class="row">
+
+               <div class="col-md-4 col-sm-6">
+                   <a>
+                         <div class="portfolio-thumb">
+                              <img src="./image/ringo_256_3.png" class="img-responsive" alt="Portfolio">
+                                   <div class="portfolio-overlay">
+                                        <div class="portfolio-item">
+                                             <h3>Specifications</h3>
+                                             <small>
+                                                 Name : Ringo<br>
+                                                 Symbol : RIN<br>
+                                                 Algo : PoW(Scrypt) + PoS<br>
+                                                 Max Coins: 80,000,000,000<br>
+                                                 Premine : 0<br>
+                                                 Block time : 1 min<br>
+                                                 Difficulty : DigiShield v2.0<br>
+                                                 Port : 9393<br>
+                                                 RPCPort : 9292
+                                             </small>
+                                        </div>
+                                   </div>
+                         </div>
+                    </a>
+               </div>
+
+               <div class="col-md-4 col-sm-6">
+                   <a>
+                         <div class="portfolio-thumb">
+                              <img src="./image/ringo_256_3.png" class="img-responsive" alt="Portfolio">
+                                   <div class="portfolio-overlay">
+                                        <div class="portfolio-item">
+                                             <h3>Proof of Work</h3>
+                                             <small>
+                                             PoW Diff x 100<br>
+                                             Total Blocks : 10000<br>
+                                             <br>
+                                             <br>
+                                             10000ブロック目のDifficultyは<br>
+                                             38.54486305に決定しました<br>
+                                             採掘へのご参加ありがとうございました
+                                             </small>
+                                        </div>
+                                   </div>
+                         </div>
+                    </a>
+               </div>
+
+               <div class="col-md-4 col-sm-6">
+                   <a>
+                         <div class="portfolio-thumb">
+                              <img src="./image/ringo_256_3.png" class="img-responsive" alt="Portfolio">
+                                   <div class="portfolio-overlay">
+                                        <div class="portfolio-item">
+                                            <h3>Proof of Stake</h3>
+                                            <small>
+                                                ～ 10000 Blocks : PoW Diff × 100<br>
+                                                ～ 20000 Blocks : PoW Diff(10000) × 100<br>
+                                                ～ 120000 Blocks : PoW Diff(10000) × 10<br>
+                                                120001 Blocks ～ : PoW Diff(10000)<br>
+                                                <br>
+                                                <br>
+                                                現在のPoS報酬は 38.54486305 RIN です
+                                            </small>
+
+                                        </div>
+                                   </div>
+                         </div>
+                    </a>
+               </div>
+
+               <div class="col-md-4 col-sm-6">
+                   <a href="./index.html">
+                         <div class="portfolio-thumb">
+                              <img src="./image/ringo_256_3.png" class="img-responsive" alt="Portfolio">
+                                   <div class="portfolio-overlay">
+                                        <div class="portfolio-item">
+                                             <h3>Ringoリンク</h3>
+                                             <small>
+                                                 <br>
+                                                 ■ Web Contents<br>
+                                                 ■ Pool<br>
+                                                 ■ Exchanges<br>
+                                                 ■ Block Explorers<br>
+                                                 ■ Game<br>
+                                                 <br>
+                                                 <a><button>準備中</button></a>
+                                             </small>
+                                        </div>
+                                   </div>
+                         </div>
+                    </a>
+               </div>
+
+               <div class="col-md-4 col-sm-6">
+                   <a href="./trouble.html">
+                         <div class="portfolio-thumb">
+                              <img src="./image/ringo_256_3.png" class="img-responsive" alt="Portfolio">
+                                   <div class="portfolio-overlay">
+                                        <div class="portfolio-item">
+                                             <h3>トラブル対処法</h3>
+                                             <small>
+                                                 <br>
+                                                 ウォレットが起動しない、<br>又はエラーメッセージが出る<br>
+                                                 <br>
+                                                 送金時のエラー(conflicted)で<br>
+                                                 残高の表示が変になった<br>
+                                                 等<br>
+                                                 <a href="./trouble.html" _blank><button>ページへ移動</button></a>
+                                             </small>
+                                        </div>
+                                   </div>
+                         </div>
+                    </a>
+               </div>
+
+               <div class="col-md-4 col-sm-6">
+                   <a>
+                         <div class="portfolio-thumb">
+                              <img src="./image/ringo_256_3.png" class="img-responsive" alt="Portfolio">
+                                   <div class="portfolio-overlay">
+                                        <div class="portfolio-item">
+                                             <h3>同期方法</h3>
+                                             <small>
+                                                 <br>
+                                                 より速く同期するにはBootstrapをご利用下さい<br>
+                                                 bootstrap.datを<br>
+                                                 C:¥Users¥ユーザー名¥AppData¥Roming¥Ringo<br>
+                                                 の中へ設置しウォレットを起動すると同期が始まります<br>
+                                                 <br>
+                                                 <a href="https://mega.nz/#F!79QwiQCK!uCX6lKEomVzfXgF1Y4iYIg" _blank><button>Download bootstrap</button></a>
+                                             </small>
+                                        </div>
+                                   </div>
+                         </div>
+                    </a>
+               </div>
+               
+               <div class="col-lg-3 col-md-4 col-sm-6">
+                   <h3 style="margin-top:2em">Ringoとは？</h3>
+                   <p>リンゴ(実物)とトレードすべく制作したコインです<br>
+                   シャキっとしたリンゴが大好き<br>
+                   年中食べてます
+                   </p>
+               </div>
+               
+               <div class="col-lg-3 col-md-4 col-sm-6">
+                   <h3 style="margin-top:20px">RingoのPoS</h3>
+                   <br>
+                   ● 1RIN以上保有している<br>
+                   ● ウォレットに入ってから6時間以上経過している<br>
+                   ● ウォレットに入ってから360ブロック以上経過している<br>
+                   ● weightが1以上<br>
+                   <br>
+                   の状態でウォレットを起動し、右下の矢印のアイコンが緑色になるとPoS採掘が始まります<br>
+                   残高が多いほど、待っている期間が長いほどweightが増え、PoSに成功しやすくなります
+               </div>
+               
+               <div class="col-lg-3 col-md-4 col-sm-6">
+                   <h3 style="margin-top:2em">りんご白書</h3>
+                   <p>- 準備中 -</p>
+               </div>
+               
+          </div>
+     </div>
+</section>
+
+<!-- Footer Section -->
+
+<footer>
+     <div class="container">
+          <div class="row">
+               <div class="col-md-3 col-sm-3">
+                   <a href="./index.html" class="navbar-brand"><img src="./image/ringo_256_3.png" width="50px" /></a>
+               </div>
+               <div class="col-md-4 col-sm-4"style="font-size:11px">
+               </div>
+               <div class="col-md-offset-1 col-md-4 col-sm-offset-1 col-sm-3">
+ <li><a href="https://github.com/dkwzjw/ringo">GitHub</a></a></li>
+ <li><a href="https://twitter.com/Ringo_yaycoin">Twitter</a></li>
+               </div>
+
+
+               <div class="clearfix col-md-12 col-sm-12">
+               </div>
+               
+               <div class="col-md-6 col-sm-6">
+                    <div class="footer-copyright">
+                         <p>.    © 2018 Ringo Developer | All Rights Reserved.</p>
+                    </div>
+               </div>
+
+               <div class="col-md-6 col-sm-6">
+                RIN:RMpGSC9J3dxmy8SPs1aWHkEDTLVbEqHdny<br>
+                BTC:1EeGEEjcNKA8XnUbXAPdg1qgqdkyMDvmZN<br>
+                MONA:MFXrTT8PC82yYhqYDDBHKJjHfMRAab8BdY
+                    <ul class="social-icon">
+                    </ul>
+               </div>
+          </div>
+     </div>
+</footer>
+
+
+<!-- SCRIPTS -->
+
+<script src="./src/jquery.js"></script>
+<script src="./src/bootstrap.js"></script>
+<script src="./src/custom.js"></script>
+
+
+</body></html>

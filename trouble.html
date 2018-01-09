@@ -1,105 +1,164 @@
-﻿<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset='utf-8'>
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen" />
-    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen" />
-    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print" />
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
 
-    <!--[if lt IE 9]>
-    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta name="description" content="">
+<meta name="keywords" content="">
+<meta name="author" content="">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-    <title>Ringo</title>
-    <style type="text/css">
-<!--
-.style1 {
-	color: #FF0000;
-	font-weight: bold;
-}
-.style2 {color: #FF0066}
--->
-    </style>
+<title>Ringo トラブルについて</title>
+
+<link rel="stylesheet" href="./src/bootstrap.css">
+<link rel="stylesheet" href="./src/font-awesome.css">
+
+<!-- Main css -->
+<link rel="stylesheet" href="./src/style.css">
+<link href="./src/css.css" rel="stylesheet">
+
 </head>
+<body>
 
-  <body>
-    <header>
-      <div class="inner_top">
-        <h1>Ringo </h1>
+<!-- PRE LOADER -->
 
-        <a href="https://github.com/dkwzjw/" target="_blank" class="button"><small>View project on</small>GitHub</a>		</div>
-    </header>
+<div class="preloader" style="display: none;">
+     <div class="sk-spinner sk-spinner-wordpress">
+          <span class="sk-inner-circle"></span>
+     </div>
+</div>
 
-    <div id="content-wrapper">
-      <div class="inner_main clearfix">
-	  		  <ul>
-          <li class="menu_top"><a href="index.html">トップページ</a></li>
-          <li class="menu_top"><a href="start.html">Ringoをはじめよう！</a></li>
-          <li class="menu_top"><a href="link.html">Ringoリンク集</a></li>
-          <li class="menu_top"><a href="trouble.html">トラブルの対処方法</a></li>
-          <li class="menu_top"><a href="sync.html">bootstrapをつかった同期方法</a></li>
-		  <div class="clear_float"></div>
-		  </ul>
-        <section id="main-content">
-		  <div id="rogo">
-		    <h2 align="center">- Ringo <font color="red">♥</font>- </h2>
-		    <p align="center"><img src="images/ringo-128.png" alt="ringo"></p>
-	      </div>
-		  <p class="concept"><br>
-		    <br>
-		    <br>
-		  </p>
-		  <h1>トラブルについて</h1>
-		  <h4>&nbsp;</h4>
-		  <h4><strong><br>
-		    <span class="style1">(1) ウォレットが起動しない、又はエラーメッセージが出る</span></strong><span class="style1">場合</span></h4>
-		  <p><br>
-		    一旦ウォレットを終了し、wallet.dat以外を消去し、再Syncしてください<br>
-		    その際、<span class="style2">walllet.datはバックアップを取っておいてください</span><br>
-		    <strong> <br>
-		    直るかもしれない方法<br>
-            </strong>1) winキー+Rを押す（スタートメニューからファイル名を指定して実行を押す）<br>
-		    2) %appdata%\Ringoと入力<br>
-		    <br>
-		    <img src="images/appdata.png" alt="appdata" width="529" height="312"><br>
-		    <br>
-		    3)そのフォルダ内のwallet.dat以外を消去し、ウォレットを再起動します<br>
-	      　<span class="style2">walllet.datはバックアップを取っておいてください</span><br>
-		  　殆どの場合、同期が終われば通常通りに使えると思います。</p>
-		  <h4>&nbsp;</h4>
-		  <h4><strong><span class="style1">(2) 送金時のエラー(conflicted)で残高の表示が変になった場合</span></strong></h4>
-		  <p><br>
-		    一旦ウォレットを終了し、<span class="style2">walllet.datのバックアップを取っておいてください</span><br>
-	          <strong><br>
-          直るかもしれない方法</strong><br>
-		  1)ringo-qt.exeのあるフォルダに新規テキストを作成<br>
-		  2)テキストの中身をringo-qt.exe -salvagewalletといれ、拡張子をtxtからbatに変えて保存<br>
-		  3)batを実行<br>
-		  <strong><br>
-		  </strong>- 受け取り用のアドレスが一部表示されなくなる件について-<br>
-		  <br>
-		  「コインを受け取る」にあったアドレスの一部が表示されなくなります<br>
-		  (wallet.dat内には存在するので送金を受け取ることは可能)<br>
-		  取引の一覧から「入金」や「PoS採掘」などから必要なアドレスをコピー、<br>
-		  デバッグウィンドウのコンソールで<br>
-		  dumpprivkey アドレス<br>
-		  といれると文字列が出てきます(公開は絶対にしないでください)<br>
-		  そのあと<br>
-		  importprivkey 文字列<br>
-		  で入れるとエラー出ますが目的のアドレスが「コインを受け取る」のところに入ります。<br>
-		  </p>
-		  <p>&nbsp;</p>
-		  <p>リンゴのイラストは、<a href="http://kage-design.com/wp/?p=1334" target="_blank">こちら</a>のサイト様の素材をベースに作成しました</p>
-		  <p><strong>本サイト及びプログラムを利用することで発生したいかなる損失・損害に対しその責任を負いません </strong></p>
-		  </li>
-	      </ul>
-	    </section>
-      </div>
+<!-- Navigation section  -->
+
+<div class="navbar navbar-default navbar-static-top" role="navigation">
+     <div class="container">
+
+          <div class="navbar-header">
+               <button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon icon-bar"></span>
+                    <span class="icon icon-bar"></span>
+               </button>
+               <a href="./index.html" class="navbar-brand"><img src="./image/ringo_256_3.png" width="70px" /></a>
+          </div>
+          <div class="collapse navbar-collapse">
+               <ul class="nav navbar-nav navbar-right">
+                    <li class="active"><a href="https://github.com/dkwzjw/ringo">GitHub</a></li>
+                    <li><a href="https://github.com/dkwzjw/ringo/releases">Download</a></li>
+               </ul>
+          </div>
+
+  </div>
+</div>
+
+<!-- Home Section -->
+
+<section id="home">
+    <div class="container">
+        <div class="row">
+            
+            <div class="col-md-12 col-sm-12">
+                <hr>
+                <img src="./image/ringo-128.png"><br>
+                    <h3>トラブルについて</h3>
+                    </div>
+            
+        </div>
     </div>
+</section>
+<!-- Home Section -->
 
-  
-  </body>
-</html>
+<section id="home">
+     <div class="container">
+          <div class="row">
+
+               <div class="col-md-12 col-sm-12">
+                   <h2>ウォレットが起動しない、又はエラーメッセージが出る</h2>
+                   
+                   <p>
+                   一旦ウォレットを終了し、wallet.dat以外を消去し、再Syncしてください<br>
+                   その際、walllet.datはバックアップを取っておいてください<br>
+                   <br>
+                   winキー+Rを押し、<code>%appdata%\Ringo</code>と入力、<br>
+                   フォルダ内のwallet.dat以外を消去し、ウォレットを再起動します<br>
+                   <br>
+                   　walllet.datはバックアップを取っておいてください<br>
+                   　殆どの場合、同期が終われば通常通りに使えます
+                   </p>
+                   <br>
+                   <br>
+                   
+                   
+                   <h2>送金時のエラー(conflicted)で残高の表示が変になった</h2>
+                   <p>
+                   一旦ウォレットを終了し、walllet.datのバックアップを取っておいてください<br>
+                   <br>
+                   ringo-qt.exeのあるフォルダに新規テキストを作成し、テキストの中身を<br>
+                   <code>ringo-qt.exe -salvagewallet</code><br>
+                   といれ、拡張子をtxtからbatに変えて保存、実行<br>
+                   しばらくすると表示が戻ります
+                   </p>
+                   <br>
+                   <br>
+                   
+                   <h2>受け取り用のアドレスが表示されなくなった</h2>
+                   <p>
+                   希に「コインを受け取る」にあったアドレスの一部が表示されなくなることがあります<br>
+                   (wallet.dat内には存在するので送金を受け取ることは可能)<br>
+                   取引の一覧から「入金」や「PoS採掘」などから必要なアドレスをコピー、<br>
+                   デバッグウィンドウのコンソールで<br>
+                   <code>dumpprivkey アドレス</code><br>
+                   をいれるとプライベートキーの文字列が出てきます(公開は絶対にしないでください)<br>
+                   そのあと<br>
+                   <code>importprivkey 文字列</code><br>
+                   で目的のアドレスがウォレット内に入ります。
+               </div>
+
+          </div>
+     </div>
+</section>
+<!-- Footer Section -->
+
+<footer>
+     <div class="container">
+          <div class="row">
+               <div class="col-md-3 col-sm-3">
+                   <a href="./index.html" class="navbar-brand"><img src="./image/ringo_256_3.png" width="50px" /></a>
+               </div>
+               <div class="col-md-4 col-sm-4"style="font-size:11px">
+               </div>
+               <div class="col-md-offset-1 col-md-4 col-sm-offset-1 col-sm-3">
+ <li><a href="https://github.com/dkwzjw/ringo">GitHub</a></a></li>
+ <li><a href="https://twitter.com/Ringo_yaycoin">Twitter</a></li>
+               </div>
+
+
+               <div class="clearfix col-md-12 col-sm-12">
+               </div>
+               
+               <div class="col-md-6 col-sm-6">
+                    <div class="footer-copyright">
+                         <p>.    © 2018 Ringo Developer | All Rights Reserved.</p>
+                    </div>
+               </div>
+
+               <div class="col-md-6 col-sm-6">
+                RIN:RMpGSC9J3dxmy8SPs1aWHkEDTLVbEqHdny<br>
+                BTC:1EeGEEjcNKA8XnUbXAPdg1qgqdkyMDvmZN<br>
+                MONA:MFXrTT8PC82yYhqYDDBHKJjHfMRAab8BdY
+                    <ul class="social-icon">
+                    </ul>
+               </div>
+          </div>
+     </div>
+</footer>
+
+
+<!-- SCRIPTS -->
+
+<script src="./src/jquery.js"></script>
+<script src="./src/bootstrap.js"></script>
+<script src="./src/custom.js"></script>
+
+
+</body></html>
