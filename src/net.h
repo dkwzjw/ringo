@@ -9,6 +9,7 @@
 #include <boost/array.hpp>
 #include <boost/foreach.hpp>
 #include <openssl/rand.h>
+#include <boost/detail/atomic_count.hpp>
 
 #ifndef WIN32
 #include <arpa/inet.h>
@@ -117,6 +118,7 @@ extern uint64_t nLocalServices;
 extern uint64_t nLocalHostNonce;
 extern CAddress addrSeenByPeer;
 extern boost::array<int, THREAD_MAX> vnThreadsRunning;
+extern boost::detail::atomic_count vaMultiThreads1;
 extern CAddrMan addrman;
 
 extern std::vector<CNode*> vNodes;
