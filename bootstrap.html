@@ -9,7 +9,7 @@
 <meta name="author" content="">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-<title>Ringo トラブルについて</title>
+<title>bootstrapでの同期</title>
 
 <link rel="stylesheet" href="./src/bootstrap.css">
 <link rel="stylesheet" href="./src/font-awesome.css">
@@ -61,7 +61,7 @@
             <div class="col-md-12 col-sm-12">
                 <hr>
                 <img src="./image/ringo-128.png"><br>
-                    <h3>トラブルについて</h3>
+                    <h3>bootstrapでの同期</h3>
                     </div>
             
         </div>
@@ -74,45 +74,36 @@
           <div class="row">
 
                <div class="col-md-12 col-sm-12">
-                   <h2>ウォレットが起動しない、又はエラーメッセージが出る</h2>
                    
                    <p>
-                   一旦ウォレットを終了し、wallet.dat以外を消去し、再Syncしてください<br>
-                   その際、walllet.datはバックアップを取っておいてください<br>
+                   bootstrapを利用するとネットワークからよりも速く同期を済ませることが出来ます。<br>
                    <br>
-                   winキー+Rを押し、<code>%appdata%\Ringo</code>と入力、<br>
-                   フォルダ内のwallet.dat以外を消去し、ウォレットを再起動します<br>
+                   <a href="https://mega.nz/#F!79QwiQCK!uCX6lKEomVzfXgF1Y4iYIg" _blank><button>Download bootstrap</button></a><br>
                    <br>
-                   　walllet.datはバックアップを取っておいてください<br>
-                   　殆どの場合、同期が終われば通常通りに使えます
+                   <h3>Windowsの場合</h3>
+                   <p>
+                  <code>C:\Users\ユーザー名\AppData\Roaming</code>の中へbootstrap.datを入れる<br>
+                  その後立ち上げればローカルのデータから再同期が始まります<br>
+                   </p>
+                   <h3>Linuxの場合</h3>
+                   <br>
+                   <p>
+                  <code>~/.Ringo/</code>の中へbootstrap.datを入れる<br>
+                  その後立ち上げればローカルのデータから再同期が始まります<br>
+                   </p>
+                   <h3>Macの場合</h3>
+                   <br>
+                   <p>
+                  <code>~/Library/Application Support/Ringo/</code>の中へbootstrap.datを入れる<br>
+                  その後立ち上げればローカルのデータから再同期が始まります<br>
                    </p>
                    <br>
                    <br>
-                   
-                   
-                   <h2>送金時のエラー(conflicted)で残高の表示が変になった</h2>
-                   <p>
-                   一旦ウォレットを終了し、walllet.datのバックアップを取っておいてください<br>
-                   <br>
-                   ringo-qt.exeのあるフォルダに新規テキストを作成し、テキストの中身を<br>
-                   <code>ringo-qt.exe -salvagewallet</code><br>
-                   といれ、拡張子をtxtからbatに変えて保存、実行<br>
-                   しばらくすると表示が戻ります
+                  <p>
+                   同期には2日ほどかかります。同期中に強制終了させると<br>
+                   bootstrap.datがbootstrap.dat.oldへリネームされるので<br>
+                   .oldを削って再起動・再同期してください。
                    </p>
-                   <br>
-                   <br>
-                   
-                   <h2>受け取り用のアドレスが表示されなくなった</h2>
-                   <p>
-                   希に「コインを受け取る」にあったアドレスの一部が表示されなくなることがあります<br>
-                   (wallet.dat内には存在するので送金を受け取ることは可能)<br>
-                   取引の一覧から「入金」や「PoS採掘」などから必要なアドレスをコピー、<br>
-                   デバッグウィンドウのコンソールで<br>
-                   <code>dumpprivkey アドレス</code><br>
-                   をいれるとプライベートキーの文字列が出てきます(公開は絶対にしないでください)<br>
-                   そのあと<br>
-                   <code>importprivkey 文字列</code><br>
-                   で目的のアドレスがウォレット内に入ります。
                </div>
 
           </div>
