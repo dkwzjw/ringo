@@ -96,6 +96,56 @@ void ClientModel::updateAlert(const QString &hash, int status)
     emit numBlocksChanged(getNumBlocks(), getNumBlocksOfPeers());
 }
 
+int ClientModel::GetNetworkHashPS(int lookup) const
+{
+    if (pindexBest == NULL)
+        return 0;
+
+    // If lookup is -1, then use blocks since last difficulty change.
+    if (lookup <= 0)
+        lookup = pindexBest->nHeight;
+
+    // If lookup is larger than chain, then set it to chain length.
+    if (lookup > pindexBest->nHeight)
+        lookup = pindexBest->nHeight;
+
+    CBlockIndex* pindexPrev = pindexBest;
+    for (int i = 0; i < lookup; i++)
+        pindexPrev = pindexPrev->pprev;
+
+    double timeDiff = pindexBest->GetBlockTime() - pindexPrev->GetBlockTime();
+    double timePerBlock = timeDiff / lookup;
+
+    return (boost::int64_t)(((double)GetDifficulty() * pow(2.0, 32)) / timePerBlock);
+}
+
+// Litecoin: copied from bitcoinrpc.cpp.
+double ClientModel::GetDifficulty() const
+{
+    // Floating point number that is a multiple of the minimum difficulty,
+    // minimum difficulty = 1.0.
+
+    if (pindexBest == NULL)
+        return 1.0;
+    int nShift = (pindexBest->nBits >> 24) & 0xff;
+
+    double dDiff =
+        (double)0x0000ffff / (double)(pindexBest->nBits & 0x00ffffff);
+
+    while (nShift < 29)
+    {
+        dDiff *= 256.0;
+        nShift++;
+    }
+    while (nShift > 29)
+    {
+        dDiff /= 256.0;
+        nShift--;
+    }
+
+    return dDiff;
+}
+
 bool ClientModel::isTestNet() const
 {
     return fTestNet;
