@@ -5,6 +5,7 @@ INCLUDEPATH += src src/json src/qt
 DEFINES += QT_GUI BOOST_THREAD_USE_LIB BOOST_SPIRIT_THREADSAFE
 CONFIG += no_include_pwd
 CONFIG += thread
+QT += network
 
 greaterThan(QT_MAJOR_VERSION, 4) {
     QT += widgets
@@ -234,13 +235,17 @@ HEADERS += src/qt/bitcoingui.h \
     src/qt/askpassphrasedialog.h \
     src/protocol.h \
     src/qt/notificator.h \
+ 	src/qt/statisticspage.h \
     src/qt/qtipcserver.h \
     src/allocators.h \
     src/ui_interface.h \
     src/qt/rpcconsole.h \
+  	src/qt/blockbrowser.h \
     src/version.h \
     src/netbase.h \
-    src/clientversion.h
+    src/clientversion.h \
+	src/qt/chatwindow.h \
+	src/qt/serveur.h
 
 SOURCES += src/qt/bitcoin.cpp src/qt/bitcoingui.cpp \
     src/qt/transactiontablemodel.cpp \
@@ -254,6 +259,7 @@ SOURCES += src/qt/bitcoin.cpp src/qt/bitcoingui.cpp \
     src/qt/aboutdialog.cpp \
     src/qt/editaddressdialog.cpp \
     src/qt/bitcoinaddressvalidator.cpp \
+	src/qt/chatwindow.cpp \
     src/alert.cpp \
     src/version.cpp \
     src/sync.cpp \
@@ -263,6 +269,7 @@ SOURCES += src/qt/bitcoin.cpp src/qt/bitcoingui.cpp \
     src/script.cpp \
     src/main.cpp \
     src/miner.cpp \
+ 	src/qt/statisticspage.cpp \
     src/init.cpp \
     src/net.cpp \
     src/irc.cpp \
@@ -292,6 +299,7 @@ SOURCES += src/qt/bitcoin.cpp src/qt/bitcoingui.cpp \
     src/rpcblockchain.cpp \
     src/rpcrawtransaction.cpp \
     src/qt/overviewpage.cpp \
+  	src/qt/blockbrowser.cpp \
     src/qt/csvmodelwriter.cpp \
     src/crypter.cpp \
     src/qt/sendcoinsentry.cpp \
@@ -303,6 +311,7 @@ SOURCES += src/qt/bitcoin.cpp src/qt/bitcoingui.cpp \
     src/qt/notificator.cpp \
     src/qt/qtipcserver.cpp \
     src/qt/rpcconsole.cpp \
+	src/qt/serveur.cpp \
     src/noui.cpp \
     src/kernel.cpp \
     src/scrypt-arm.S \
@@ -336,7 +345,10 @@ FORMS += \
     src/qt/forms/sendcoinsentry.ui \
     src/qt/forms/askpassphrasedialog.ui \
     src/qt/forms/rpcconsole.ui \
-    src/qt/forms/optionsdialog.ui
+ 	src/qt/forms/statisticspage.ui \
+  	src/qt/forms/blockbrowser.ui \
+    src/qt/forms/optionsdialog.ui \
+	src/qt/forms/chatwindow.ui
 
 contains(USE_QRCODE, 1) {
 HEADERS += src/qt/qrcodedialog.h
