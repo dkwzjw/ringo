@@ -1148,9 +1148,8 @@ void MapPort()
 // The first name is used as information source for addrman.
 // The second name should resolve to a list of seed addresses.
 static const char *strDNSSeed[][2] = {
-    {"ringoringo.luna.ddns.vc", "ringoringo.luna.ddns.vc"},
-    {"ringoringo.sun.ddns.vc", "ringoringo.sun.ddns.vc"},
-    {"rinseed.sighash.info", "rinseed.sighash.info"},
+    {"ringoseed.dip.jp", "ringoseed.dip.jp"},
+    {"ringo.seed.lapool.me", "ringo.seed.lapool.me"}
 };
 
 void ThreadDNSAddressSeed(void* parg)
@@ -1221,10 +1220,14 @@ void ThreadDNSAddressSeed2(void* parg)
 
 unsigned int pnSeed[] =
 {
-0x3b158c70, 0x333402de, 0x795d6c79, 0xe27df97a, 
-0xd806a399, 0x9dcec3cb, 0x73fe1676, 0x434ea3b6, 
-0x636d07de, 0x28bec780, 0x69fc463a, 0xf4f506b4, 
-0x5892a76a, 0xf310197c, 0x5b9f5c79, 0x73fe1676, 
+	0x3dc59d5e, 0x7e19d95f, 0x67d44d87, 0xdb0bc810, 0xaf6c52d4,
+	0x99aceeb8, 0x7dc632ed, 0xdb75f837, 0xb7b087fd, 0x2d4c6989,
+	0x6aa8629a, 0xb4c411db, 0xdc15b5ac, 0x99c4afb8, 0x2a7fdd24,
+	0x1b8c4a41, 0x31818519, 0xdb6e1450, 0x79716a88, 0x7cd44905,
+	0x67d0dc84, 0x1b5f7f2a, 0x0e0c4080, 0x1b8bc038, 0xa010d362,
+	0x6fef7fca, 0x7291d444, 0xdae77a87, 0x77af9a0a, 0x99a965cb,
+	0xa010e677, 0x76f0ee5c, 0x7e5e5751, 0x83d5c306, 0xaf6cfa09,
+	0x7e3df640, 0x7443c827, 0xb491b146, 0x74fe52ae, 0xdc1ed223
 };
 
 void DumpAddresses()
