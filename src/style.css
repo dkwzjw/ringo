@@ -47,6 +47,13 @@ p {
     line-height: 26px;
     letter-spacing: 0.2px;
 }
+button {
+    color: red;
+}
+
+button:hover {
+    color: violet;
+}
 
 strong {
   font-weight: 400;
@@ -268,10 +275,13 @@ a:hover, a:active, a:focus {
 }
 
 #home hr {
-  width: 82px;
+  width: 100%;
   margin-top: 12px;
 }
 
+a:hover {
+    color: violet;
+}
 
 
 /*---------------------------------------
