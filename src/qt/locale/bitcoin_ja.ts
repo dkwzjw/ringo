@@ -236,7 +236,7 @@ MIT/X11 ソフトウェア ライセンスの下で配布されています。�
     <message>
         <location line="+1"/>
         <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR COINS&lt;/b&gt;!</source>
-        <translation>注意：暗号化したウォレットのパスワードを忘れた場合、b&gt;すべてのコインを失います&lt;/b&gt;!</translation>
+        <translation>注意：暗号化したウォレットのパスワードを忘れた場合、すべてのコインを失います</translation>
     </message>
     <message>
         <location line="+0"/>
