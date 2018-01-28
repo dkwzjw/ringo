@@ -11,7 +11,7 @@ Copyright (c) 2013 NovaCoin Developers
 
 Copyright (c) 2014 Blackcoin Developers
 
-Copyright (c) 2014 Ringo Developers
+Copyright (c) 2014-2018 Ringo Developers
 
 What is Ringo?
 ----------------
