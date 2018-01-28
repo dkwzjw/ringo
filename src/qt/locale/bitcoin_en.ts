@@ -15,10 +15,10 @@
     </message>
     <message>
         <location line="+41"/>
-        <source>Copyright © 2009-2014 The Bitcoin developers
-Copyright © 2012-2014 The NovaCoin developers</source>
-        <translation>Copyright © 2009-2014 The Bitcoin developers
-Copyright © 2012-2014 The NovaCoin developers</translation>
+        <source>Copyright © 2009-2018 The Bitcoin developers
+Copyright © 2012-2018 The Blackcoin developers
+Copyright © 2014-2018 The Ringo developers</source>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location line="+14"/>

@@ -13,10 +13,9 @@
     </message>
     <message>
         <location line="+41"/>
-        <source>Copyright c 2009-2014 The Bitcoin developers
-Copyright c 2012-2014 The NovaCoin developers
-Copyright c 2012-2014 The BlackCoin developers
-Copyright c 2014 The Ringo developers</source>
+        <source>Copyright © 2009-2018 The Bitcoin developers
+Copyright © 2014-2018 The Blackcoin developers
+Copyright © 2014-2018 The Ringo developers</source>
         <translation type="unfinished"/>
     </message>
     <message>
@@ -554,27 +553,27 @@ MIT/X11 ソフトウェア ライセンスの下で配布されています。�
     <message>
         <location line="+413"/>
         <source>Staking.&lt;br&gt;Your weight is %1&lt;br&gt;Network weight is %2&lt;br&gt;Expected time to earn reward is %3</source>
-        <translation>PoSによる採掘中&lt;br&gt;weightは%1&lt;br&gt;ネットワークのweightは%2&lt;br&gt;報酬が得られるまでおよそ%3</translation>
+        <translation>PoSによる栽培中&lt;br&gt;weightは%1&lt;br&gt;ネットワークのweightは%2&lt;br&gt;Ringoが実るまでおよそ%3</translation>
     </message>
     <message>
         <location line="+6"/>
         <source>Not staking because wallet is locked</source>
-        <translation>ウォレットをロックされたため、PoSによる採掘ができません</translation>
+        <translation>ウォレットをロックされたため、PoSによる栽培ができません</translation>
     </message>
     <message>
         <location line="+2"/>
         <source>Not staking because wallet is offline</source>
-        <translation>ウォレットはオフラインなので、PoSによる採掘ができません</translation>
+        <translation>ウォレットはオフラインなので、PoSによる栽培ができません</translation>
     </message>
     <message>
         <location line="+2"/>
         <source>Not staking because wallet is syncing</source>
-        <translation>ウォレットが同期最中ため、PoSによる採掘ができません</translation>
+        <translation>ウォレットが同期最中ため、PoSによる栽培ができません</translation>
     </message>
     <message>
         <location line="+2"/>
         <source>Not staking because you don&apos;t have mature coins</source>
-        <translation>PoSによる採掘は停止しています</translation>
+        <translation>PoSによる栽培は停止しています</translation>
     </message>
     <message numerus="yes">
         <location line="-403"/>
@@ -619,7 +618,7 @@ MIT/X11 ソフトウェア ライセンスの下で配布されています。�
     <message>
         <location line="+59"/>
         <source>This transaction is over the size limit.  You can still send it for a fee of %1, which goes to the nodes that process your transaction and helps to support the network.  Do you want to pay the fee?</source>
-        <translation>この送金には手数料がかかります。%1を支払うと、送金が出来ます。手数料は採掘者に配布されますので、ネットワークの維持にご協力ください。手数料を支払いますか？</translation>
+        <translation>この送金には手数料がかかります。%1を支払うと、送金が出来ます。手数料は栽培者に配布されますので、ネットワークの維持にご協力ください。手数料を支払いますか？</translation>
     </message>
     <message>
         <location line="+5"/>
@@ -713,7 +712,7 @@ Address: %4
     <message>
         <location line="+18"/>
         <source>Not staking</source>
-        <translation>PoSによる採掘は停止しています</translation>
+        <translation>PoSによる栽培は停止しています</translation>
     </message>
     <message>
         <location filename="../bitcoin.cpp" line="+109"/>
@@ -1117,7 +1116,7 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
     <message>
         <location line="+31"/>
         <source>Reserved amount does not participate in staking and is therefore spendable at any time.</source>
-        <translation>設定金額になるまでPoSによる採掘は参加しない。(いつでも支出できます)</translation>
+        <translation>設定金額になるまでPoSによる栽培は参加しない。(いつでも支出できます)</translation>
     </message>
     <message>
         <location line="+15"/>
@@ -2392,7 +2391,7 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
     <message>
         <location line="+1"/>
         <source>PoS Mined</source>
-        <translation>PoS 採掘</translation>
+        <translation>PoS 栽培</translation>
     </message>
     <message>
         <location line="+38"/>
@@ -2486,7 +2485,7 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
     <message>
         <location line="+1"/>
         <source>PoS Mined</source>
-        <translation>PoS 採掘</translation>
+        <translation>PoS 栽培</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -2752,12 +2751,12 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
     <message>
         <location line="-8"/>
         <source>Importing blockchain data file.</source>
-        <translation>ブロックチェインのファイルを読み込んでいる。</translation>
+        <translation>ブロックチェインのファイルを読み込んでいます。</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>Importing bootstrap blockchain data file.</source>
-        <translation>ブートストラップなブロックチェインのファイルを読み込んでいる。</translation>
+        <translation>ブートストラップなブロックチェインのファイルを読み込んでいます。</translation>
     </message>
     <message>
         <location line="-88"/>
@@ -2767,7 +2766,7 @@ This label turns red, if the priority is smaller than &quot;medium&quot;.
     <message>
         <location line="+1"/>
         <source>Use the test network</source>
-        <translation>テストのためのネットワークを使用</translation>
+        <translation>テストネットワークを使用</translation>
     </message>
     <message>
         <location line="-24"/>
